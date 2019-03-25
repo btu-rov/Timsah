@@ -2,15 +2,19 @@ void setup() {
   Serial.begin(9600);
 }
 
+int tmp = 0;
+
 void loop() {
-  delay(2000);
   
+  tmp++;
+  delay(300);
   Serial.write("$\n");
   Serial.write("TMP\n"); // Temp
   Serial.write("#\n");
 
   // Temp Data
-  Serial.write("25\n");
+  Serial.print(tmp);
+  Serial.write("\n");
   
   Serial.write("$\n");
   Serial.write("ACC\n"); // Acc
