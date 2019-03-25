@@ -1,0 +1,23 @@
+{
+  "name": "timsah-gui",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "postinstall": "electron-builder install-app-deps"
+  },
+  "author": "Bahtiyar Bayram",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^4.1.1",
+    "electron-builder": "^20.39.0",
+    "electron-rebuild": "^1.8.4"
+  },
+  "dependencies": {
+    "data-table": "^2.0.0",
+    "path": "^0.12.7",
+    "url": "^0.11.0",
+    "serialport": "^7.1.3"
+  }
+}
