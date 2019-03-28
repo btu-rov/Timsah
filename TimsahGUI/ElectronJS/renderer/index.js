@@ -19,6 +19,9 @@ const Readline = require('@serialport/parser-readline')
   let rovACC = ''
 
   parser.on('data', function(data) {
+    // Print all received data to #incomingData text area.
+    document.getElementById("incomingData").value += "\n"+data;
+
     if(data == '$') {
       status = 1 // next data will be mode
       mode = ''
@@ -61,3 +64,10 @@ const Readline = require('@serialport/parser-readline')
       }
     }
   })
+
+  // If #btn clicked then send value of #sendDat input.
+  document.getElementById("btn").onclick = function(e) {
+    let dat = document.getElementById("sendDat").value;
+    document.getElementById('sendDat').value = ""
+    port.write(dat);
+  };

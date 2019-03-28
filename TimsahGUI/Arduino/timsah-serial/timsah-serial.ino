@@ -1,5 +1,6 @@
 void setup() {
   Serial.begin(9600);
+  pinMode(13, OUTPUT);
 }
 
 int tmp = 0;
@@ -7,7 +8,7 @@ int tmp = 0;
 void loop() {
   
   tmp++;
-  delay(300);
+  delay(3000);
   Serial.write("$\n");
   Serial.write("TMP\n"); // Temp
   Serial.write("#\n");
@@ -36,4 +37,18 @@ void loop() {
 
   // End of data
   Serial.write("$$\n");
+}
+
+// Get serial data
+void serialEvent(){
+  String in = Serial.readString();
+    Serial.write("I received: ");
+    Serial.print(in);
+    Serial.write("\n");
+    // If first char is 1 then turn on led
+    if(in[0] == '1') {
+      digitalWrite(13, HIGH);
+    }else {
+      digitalWrite(13, LOW); 
+    }
 }
