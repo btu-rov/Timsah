@@ -5,6 +5,83 @@
 const SerialPort = require('serialport')
 const Readline = require('@serialport/parser-readline')
 
+var Chart = require('chart.js');
+var data1 = [27, 28, 30, 29, 33, 34, 37, 40, 35]
+var ctx1 = document.getElementById('temp');
+var myChart = new Chart(ctx1, {
+    type: 'line',
+    data: {
+      labels: ['0', '1', '2', '3', '4', '5', '6', '7', '8'],
+      datasets: [{
+        label: 'Temperature',
+        data: data1,
+        fill: true,
+        backgroundColor: "rgba(99, 132, 255, 0.2)",
+        borderColor: "rgb(99, 132, 255)",
+        pointBackgroundColor: "rgb(99, 132, 255)",
+      }]
+    },
+    options: {
+      scales: {
+        yAxes: [{
+          ticks: {
+            beginAtZero: true
+          }
+        }]
+      }
+    }
+});
+
+var data2 = [50, 100, 30, 70]
+var ctx2 = document.getElementById('acc');
+var myChart = new Chart(ctx2, {
+    type: 'radar',
+    data: {
+      labels: ['0', '1', '2', '3'],
+      datasets: [{
+        label: 'Acc',
+        data: data2,
+        fill: true,
+        backgroundColor: "rgba(255, 99, 132, 0.2)",
+        borderColor: "rgb(255, 99, 132)",
+        pointBackgroundColor: "rgb(255, 99, 132)",
+      }]
+    },
+    options: {
+      elements: {
+            line: {
+                tension: 0,
+                borderWidth: 3
+            }
+        }
+    }
+});
+
+var data3 = [50, 100, 30, 70]
+var ctx3 = document.getElementById('gyr');
+var myChart = new Chart(ctx3, {
+    type: 'radar',
+    data: {
+      labels: ['0', '1', '2', '3'],
+      datasets: [{
+        label: 'Gyr',
+        data: data2,
+        fill: true,
+        backgroundColor: "rgba(132, 99, 255, 0.2)",
+        borderColor: "rgb(132, 99, 255)",
+        pointBackgroundColor: "rgb(132, 99, 255)",
+      }]
+    },
+    options: {
+      elements: {
+            line: {
+                tension: 0,
+                borderWidth: 3
+            }
+        }
+    }
+});
+
   const port = new SerialPort('COM7', {
     baudRate: 9600
   })
