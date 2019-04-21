@@ -8,43 +8,54 @@
     <script src="js/bootstrap.min.js"></script>
   </head>
   <body>
-    <div class="container">
+    <div class="container-fluid">
       <div class="row">
-        <div class="col">
-          <h4 style="text-align: center">Temperature</h4>
-          <canvas id="temp" width="500" height="75"></canvas>
+        <div class="col-2">
+          <h5 style="text-align: center">Accelerometer</h5>
+          <canvas id="acc" width="10" height="10"></canvas>
+        </div>
+        <div class="col-2">
+          <h5 style="text-align: center">Gyrometer</h5>
+          <canvas id="gyr" width="10" height="10"></canvas>
+        </div>
+        <div class="col-1">
+          <h5 style="text-align: center">Speed X</h5>
+          <canvas id="speedX" width="10" height="10"></canvas>
+        </div>
+        <div class="col-1">
+          <h5 style="text-align: center">Speed Y</h5>
+          <canvas id="speedY" width="10" height="10"></canvas>
+        </div>
+        <div class="col-2">
+          <h5 style="text-align: center">Depth</h5>
+          <canvas id="depth" width="30" height="30"></canvas>
+        </div>
+        <div class="col-4">
+          <h5 style="text-align: center">Temperature</h5>
+          <canvas id="temp" width="100" height="40"></canvas>
         </div>
       </div>
       <div class="row">
-        <div class="col">
-          <h4 style="text-align: center">Accelerometer</h4>
-          <canvas id="acc" width="30" height="30"></canvas>
-        </div>
-        <div class="col">
-          <h4 style="text-align: center">Gyrometer</h4>
-          <canvas id="gyr" width="60" height="60"></canvas>
-        </div>
-        <div class="col">
-          <h4 style="text-align: center">Speed X</h4>
-          <canvas id="speedX" width="60" height="60"></canvas>
-        </div>
-        <div class="col">
-          <h4 style="text-align: center">Speed Y</h4>
-          <canvas id="speedY" width="60" height="60"></canvas>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <h1>Received and parsed Datas</h1>
+        <div class="col-3">
+          <h3>Received Datas</h3>
           <div id="TMP"></div>
           <div id="GYR"></div>
           <div id="ACC"></div>
-
+          <div id="SPD"></div>
+          <div id="SON"></div>
+          <!--
           ​Send Data: <input type="text" id="sendDat" value="">
           <button id="btn">Send</button>
+
           <h1>Received Datas</h1>
-          <textarea rows="30" cols="50" id="incomingData"></textarea>
-           </br>
+          <textarea rows="30" cols="20" id="incomingData"></textarea>
+          -->
+        </div>
+        <div class="col-4">
+
+        </div>
+        <div class="col-6">
+
         </div>
       </div>
     </div>
