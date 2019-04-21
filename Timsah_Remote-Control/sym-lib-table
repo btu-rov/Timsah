@@ -1,3 +1,4 @@
 (sym_lib_table
-  (lib (name Timsah)(type Legacy)(uri C:/Users/alper/Desktop/GitHub/Timsah_Kumanda/Timsah.lib)(options "")(descr ""))
+  (lib (name Symols)(type Legacy)(uri ${KIPRJMOD}/Symbols/Symols.lib)(options "")(descr ""))
+  (lib (name Timsah)(type Legacy)(uri ${KIPRJMOD}/Symbols/Timsah.lib)(options "")(descr ""))
 )
