@@ -17,10 +17,14 @@ void loop() {
   int Gy = random(-100, 100);
   int Gz = random(-100, 100);
 
-  int speedX = random(0,100);
-  int speedY = random(0,100);
+  int Tiltx = random(-100,100);
+  int Tilty = random(-100, 100);
+  int Tiltz = random(-100, 100);
 
-  int sonar = random(0, 400);
+  int speed[] = {random(0,100),random(0,100),random(0,100),random(0,100)};
+
+  // Depth, Sonar 1, Sonar 2, Sonar 3
+  int sonar[] = {random(0, 400), random(0, 400), random(0, 400), random(0, 400)};
   
   delay(100);
   Serial.write("$\n");
@@ -56,13 +60,29 @@ void loop() {
   Serial.write("\n");
 
   Serial.write("$\n");
+  Serial.write("TLT\n"); // TLT
+  Serial.write("#\n");
+
+  // TLT Data
+  Serial.print(Tiltx);
+  Serial.write("\n");
+  Serial.print(Tilty);
+  Serial.write("\n");
+  Serial.print(Tiltz);
+  Serial.write("\n");
+
+  Serial.write("$\n");
   Serial.write("SPD\n"); // Speed
   Serial.write("#\n");
 
   // Speed Data
-  Serial.print(speedX);
+  Serial.print(speed[0]);
   Serial.write("\n");
-  Serial.print(speedY);
+  Serial.print(speed[1]);
+  Serial.write("\n");
+  Serial.print(speed[2]);
+  Serial.write("\n");
+  Serial.print(speed[3]);
   Serial.write("\n");
 
   Serial.write("$\n");
@@ -70,7 +90,13 @@ void loop() {
   Serial.write("#\n");
 
   // Speed Data
-  Serial.print(sonar);
+  Serial.print(sonar[0]);
+  Serial.write("\n");
+  Serial.print(sonar[1]);
+  Serial.write("\n");
+  Serial.print(sonar[2]);
+  Serial.write("\n");
+  Serial.print(sonar[3]);
   Serial.write("\n");
   
   // End of data
