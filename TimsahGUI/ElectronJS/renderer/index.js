@@ -26,22 +26,25 @@ let dataReady = 0
 let rovTMP = ''
 let rovGYR = ''
 let rovACC = ''
+let rovTLT = ''
 let rovSPD = ''
 let rovSON = ''
 
 // Integers
 let rovGYRdata = []
 let rovACCdata = []
+let rovTLTdata = []
 let rovSPDdata = []
+let rovSONdata = []
 let rovTMPdata
-let rovSONdata
 
 
 // Final data
 let GYRdata = []
 let ACCdata = []
+let TLTdata = []
 let SPDdata = []
-let SONdata
+let SONdata = []
 let TMPdata
 
 parser.on('data', function(data) {
@@ -68,6 +71,9 @@ parser.on('data', function(data) {
   }else if (data == '#' && mode == 'SON') {
     status = 0
     rovSON = '' // Clear SON data befor write
+  }else if (data == '#' && mode == 'TLT') {
+    status = 0
+    rovTLT = '' // Clear TLT data befor write
   }
 
   // If end of data command ($$) received then print all data.
@@ -75,6 +81,7 @@ parser.on('data', function(data) {
     document.getElementById('TMP').innerHTML = "TMP Data: " + rovTMP
     document.getElementById('GYR').innerHTML = "GYR Data: " + rovGYR
     document.getElementById('ACC').innerHTML = "ACC Data: " + rovACC
+    document.getElementById('TLT').innerHTML = "TLT Data: " + rovTLT
     document.getElementById('SPD').innerHTML = "SPD Data: " + rovSPD
     document.getElementById('SON').innerHTML = "SON Data: " + rovSON
   }
@@ -106,6 +113,17 @@ parser.on('data', function(data) {
         count = 0;
       }
     }
+    if (mode == 'TLT') {
+      rovTLT += data
+      rovTLT += ','
+      parsedData = parseInt(data, 10)
+      rovTLTdata[count] = parsedData
+      count++;
+      if(count == 3) {
+        TLTdata = rovTLTdata
+        count = 0;
+      }
+    }
     if (mode == 'TMP') {
       rovTMP = data
       parsedData = parseInt(data, 10)
@@ -117,31 +135,34 @@ parser.on('data', function(data) {
       parsedData = parseInt(data, 10)
       rovSPDdata[count] = parsedData
       count++
-      if(count == 2) {
+      if(count == 4) {
         SPDdata = rovSPDdata
         count = 0;
       }
     }
     if (mode == 'SON') {
-      rovSON = data
+      rovSON += data
+      rovSON += ','
       parsedData = parseInt(data, 10)
-      rovSONdata = parsedData
+      rovSONdata[count] = parsedData
+      count++
+      if(count == 4) {
+        SONdata = rovSONdata
+        count = 0;
+      }
     }
   }
-
-
 })
 
-var data1 = [];
-var ctx1 = document.getElementById('temp');
-var myChart1 = new Chart(ctx1, {
+var chartDataTemp = [];
+var ctxTemp = document.getElementById('temp');
+var chartTemp = new Chart(ctxTemp, {
   type: 'line',
   data: {
-    labels: ['-15', '-14', '-13', '-12', '-11', '-10', '-9', '-8', '-7',
-    '-6', '-5', '-4', '-3', '-2', '-1', '0'],
+    labels: ['-10', '-9', '-8', '-7', '-6', '-5', '-4', '-3', '-2', '-1', '0'],
     datasets: [{
       label: 'TMP',
-      data: data1,
+      data: chartDataTemp,
       fill: true,
       backgroundColor: "rgba(99, 132, 255, 0.2)",
       borderColor: "rgb(99, 132, 255)",
@@ -161,15 +182,15 @@ var myChart1 = new Chart(ctx1, {
   }
 });
 
-var data2 = []
-var ctx2 = document.getElementById('acc');
-var myChart2 = new Chart(ctx2, {
+var chartDataAcc = []
+var ctxAcc = document.getElementById('acc');
+var chartAcc = new Chart(ctxAcc, {
   type: 'radar',
   data: {
     labels: ['+y', '+x', '-y', '-x'],
     datasets: [{
       label: 'ACC',
-      data: data2,
+      data: chartDataAcc,
       fill: true,
       backgroundColor: "rgba(255, 99, 132, 0.2)",
       borderColor: "rgb(255, 99, 132)",
@@ -193,15 +214,15 @@ var myChart2 = new Chart(ctx2, {
   }
 });
 
-var data3 = []
-var ctx3 = document.getElementById('gyr');
-var myChart3 = new Chart(ctx3, {
+var chartDataGyr = []
+var ctxGyr = document.getElementById('gyr');
+var chartGyr = new Chart(ctxGyr, {
   type: 'radar',
   data: {
     labels: ['+y', '+x', '-y', '-x'],
     datasets: [{
       label: 'GYR',
-      data: data3,
+      data: chartDataGyr,
       fill: true,
       backgroundColor: "rgba(132, 99, 255, 0.2)",
       borderColor: "rgb(132, 99, 255)",
@@ -225,13 +246,45 @@ var myChart3 = new Chart(ctx3, {
   }
 });
 
-var data4 = []
-var ctx4 = document.getElementById('speedX');
-var myChart4 = new Chart(ctx4, {
+var chartDataTilt = []
+var ctxTilt = document.getElementById('tlt');
+var chartTilt = new Chart(ctxTilt, {
+  type: 'radar',
+  data: {
+    labels: ['+y', '+x', '-y', '-x'],
+    datasets: [{
+      label: 'TLT',
+      data: chartDataTilt,
+      fill: true,
+      backgroundColor: "rgba(24, 214, 210, 0.2)",
+      borderColor: "rgb(24, 214, 210)",
+      pointBackgroundColor: "rgb(24, 214, 210)",
+    },{
+      label: '',
+      data: [100, 100, 100, 100],
+      fill: false,
+      backgroundColor: "rgba(0, 0, 0, 0)",
+      borderColor: "rgba(0, 0, 0, 0)",
+      pointBackgroundColor: "rgba(0, 0, 0, 0)"
+    }]
+  },
+  options: {
+    elements: {
+      line: {
+        tension: 0,
+        borderWidth: 3
+      }
+    }
+  }
+});
+
+var chartDataSpdR = []
+var ctxSpdR = document.getElementById('speedRight');
+var chartSpdR = new Chart(ctxSpdR, {
   type: 'doughnut',
   data: {
     datasets: [{
-      data: data4,
+      data: chartDataSpdR,
       backgroundColor: [
         "rgba(125, 243, 80, 0.3)",
         "rgb(255, 255, 255)"
@@ -247,18 +300,18 @@ var myChart4 = new Chart(ctx4, {
   }
 });
 
-var data5 = []
-var ctx5 = document.getElementById('speedY');
-var myChart5 = new Chart(ctx5, {
+var chartDataSpdL = []
+var ctxSpdL = document.getElementById('speedLeft');
+var chartSpdL = new Chart(ctxSpdL, {
   type: 'doughnut',
   data: {
     datasets: [{
-      data: data5,
+      data: chartDataSpdL,
       backgroundColor: [
-        "rgba(50, 200, 200, 0.3)",
+        "rgba(80, 194, 169, 0.3)",
         "rgb(255, 255, 255)"
       ],
-      borderColor: "rgb(50, 200, 200)",
+      borderColor: "rgb(80, 194, 169)",
       weight: 2
     }]
   },
@@ -269,18 +322,64 @@ var myChart5 = new Chart(ctx5, {
   }
 });
 
-var data6 = []
-var ctx6 = document.getElementById('depth');
-var myChart6 = new Chart(ctx6, {
+var chartDataSpdTopR = []
+var ctxSpdTopR = document.getElementById('speedTopRight');
+var chartSpdTopR = new Chart(ctxSpdTopR, {
+  type: 'doughnut',
+  data: {
+    datasets: [{
+      data: chartDataSpdTopR,
+      backgroundColor: [
+        "rgba(32, 32, 242, 0.3)",
+        "rgb(255, 255, 255)"
+      ],
+      borderColor: "rgb(32, 32, 242)",
+      weight: 2
+    }]
+  },
+  options: {
+    cutoutPercentage: 70,
+    circumference: 1.6*Math.PI,
+    rotation: -1.3*Math.PI
+  }
+});
+
+var chartDataSpdTopL = []
+var ctxSpdTopL = document.getElementById('speedTopLeft');
+var chartSpdTopL = new Chart(ctxSpdTopL, {
+  type: 'doughnut',
+  data: {
+    datasets: [{
+      data: chartDataSpdTopL,
+      backgroundColor: [
+        "rgba(248, 2, 127, 0.3)",
+        "rgb(255, 255, 255)"
+      ],
+      borderColor: "rgb(248, 2, 127)",
+      weight: 2
+    }]
+  },
+  options: {
+    cutoutPercentage: 70,
+    circumference: 1.6*Math.PI,
+    rotation: -1.3*Math.PI
+  }
+});
+
+var chartDataDepth = []
+var ctxDepth = document.getElementById('depth');
+var chartDepth = new Chart(ctxDepth, {
   type: 'bar',
   data: {
-    labels: ["Depth"],
+    labels: ["Depth", "Sonar 1", "Sonar 2", "Sonar Front"],
     datasets: [{
       label: "Depth",
-      data: data6,
+      data: chartDataDepth,
       fill: false,
-      backgroundColor: ["rgba(255, 99, 132, 0.2)", "rgba(255, 159, 64, 0.2)"],
-      borderColor: ["rgb(255, 99, 132)", "rgb(255, 159, 64)"],
+      backgroundColor: ["rgba(255, 99, 132, 0.2)", "rgba(255, 159, 64, 0.2)",
+                        "rgba(23, 200, 101, 0.2)", "rgba(19, 82, 96, 0.2)"],
+      borderColor: ["rgb(255, 99, 132)", "rgb(255, 159, 64)",
+                    "rgb(23, 200, 101)", "rgb(19, 82, 96)"],
       borderWidth: 1
     }]
   },
@@ -302,58 +401,80 @@ var myChart6 = new Chart(ctx6, {
 
 // Repeated every 1.5 seconds
 setInterval(function(){
-  for (var i = 0; i < data1.length-1; i++) {
-    data1[i] = data1[i+1]
+  for (var i = 0; i < chartDataTemp.length-1; i++) {
+    chartDataTemp[i] = chartDataTemp[i+1]
   }
-  data1[15] = rovTMPdata
-  myChart1.update()
+  chartDataTemp[15] = rovTMPdata
+  chartTemp.update()
 }, 1500)
 
 // Repeads every 0.5 seconds
 setInterval(function(){
-  if (GYRdata[0] < 0 && GYRdata[1] < 0) {
-    data2 = [0, 0, -GYRdata[1], -GYRdata[0]]
-  }else if (GYRdata[0] > 0 && GYRdata[1] < 0) {
-    data2 = [0, GYRdata[0], -GYRdata[1], 0]
-  }else if (GYRdata[0] < 0 && GYRdata[1] > 0) {
-    data2 = [GYRdata[1], 0, 0, -GYRdata[0]]
-  }else {
-    data2 = [GYRdata[1], GYRdata[0], 0, 0]
-  }
-
-  myChart2.data.datasets[0].data = data2
-  myChart2.update()
-
   if (ACCdata[0] < 0 && ACCdata[1] < 0) {
-    data3 = [0, 0, -ACCdata[1], -ACCdata[0]]
+    chartDataAcc = [0, 0, -ACCdata[1], -ACCdata[0]]
   }else if (ACCdata[0] > 0 && ACCdata[1] < 0) {
-    data3 = [0, ACCdata[0], -ACCdata[1], 0]
+    chartDataAcc = [0, ACCdata[0], -ACCdata[1], 0]
   }else if (ACCdata[0] < 0 && ACCdata[1] > 0) {
-    data3 = [ACCdata[1], 0, 0, -ACCdata[0]]
+    chartDataAcc = [ACCdata[1], 0, 0, -ACCdata[0]]
   }else {
-    data3 = [ACCdata[1], ACCdata[0], 0, 0]
+    chartDataAcc = [ACCdata[1], ACCdata[0], 0, 0]
   }
 
-  myChart3.data.datasets[0].data = data3
-  myChart3.update()
+  chartAcc.data.datasets[0].data = chartDataAcc
+  chartAcc.update()
 
-  data4 = [SPDdata[0], 100-SPDdata[0]]
-  myChart4.data.datasets[0].data = data4
-  myChart4.update()
+  if (GYRdata[0] < 0 && GYRdata[1] < 0) {
+    chartDataGyr = [0, 0, -GYRdata[1], -GYRdata[0]]
+  }else if (GYRdata[0] > 0 && GYRdata[1] < 0) {
+    chartDataGyr = [0, GYRdata[0], -GYRdata[1], 0]
+  }else if (GYRdata[0] < 0 && GYRdata[1] > 0) {
+    chartDataGyr = [GYRdata[1], 0, 0, -GYRdata[0]]
+  }else {
+    chartDataGyr = [GYRdata[1], GYRdata[0], 0, 0]
+  }
 
-  data5 = [SPDdata[1], 100-SPDdata[1]]
-  myChart5.data.datasets[0].data = data5
-  myChart5.update()
+  chartGyr.data.datasets[0].data = chartDataGyr
+  chartGyr.update()
 
-  data6 = [rovSONdata, 400]
-  myChart6.data.datasets[0].data = data6
-  myChart6.update()
+  if (TLTdata[0] < 0 && TLTdata[1] < 0) {
+    chartDataTilt = [0, 0, -TLTdata[1], -TLTdata[0]]
+  }else if (TLTdata[0] > 0 && TLTdata[1] < 0) {
+    chartDataTilt = [0, TLTdata[0], -TLTdata[1], 0]
+  }else if (TLTdata[0] < 0 && TLTdata[1] > 0) {
+    chartDataTilt = [TLTdata[1], 0, 0, -TLTdata[0]]
+  }else {
+    chartDataTilt = [TLTdata[1], TLTdata[0], 0, 0]
+  }
+
+  chartTilt.data.datasets[0].data = chartDataTilt
+  chartTilt.update()
+
+  chartDataSpdR = [SPDdata[0], 100-SPDdata[0]]
+  chartSpdR.data.datasets[0].data = chartDataSpdR
+  chartSpdR.update()
+
+  chartDataSpdL = [SPDdata[1], 100-SPDdata[1]]
+  chartSpdL.data.datasets[0].data = chartDataSpdTopL
+  chartSpdL.update()
+
+  chartDataSpdTopR = [SPDdata[2], 100-SPDdata[2]]
+  chartSpdTopR.data.datasets[0].data = chartDataSpdTopR
+  chartSpdTopR.update()
+
+  chartDataSpdTopL = [SPDdata[3], 100-SPDdata[3]]
+  chartSpdTopL.data.datasets[0].data = chartDataSpdTopL
+  chartSpdTopL.update()
+
+  chartDataDepth = [rovSONdata[0], rovSONdata[1], rovSONdata[2], rovSONdata[3], 400]
+  chartDepth.data.datasets[0].data = chartDataDepth
+  chartDepth.update()
 }, 500)
 
-
+/*
 // If #btn clicked then send value of #sendDat input.
 document.getElementById("btn").onclick = function(e) {
   let dat = document.getElementById("sendDat").value;
   document.getElementById('sendDat').value = ""
   port.write(dat);
 };
+*/

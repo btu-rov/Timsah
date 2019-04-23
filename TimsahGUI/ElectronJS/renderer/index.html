@@ -18,29 +18,48 @@
           <h5 style="text-align: center">Gyrometer</h5>
           <canvas id="gyr" width="10" height="10"></canvas>
         </div>
-        <div class="col-1">
-          <h5 style="text-align: center">Speed X</h5>
-          <canvas id="speedX" width="10" height="10"></canvas>
-        </div>
-        <div class="col-1">
-          <h5 style="text-align: center">Speed Y</h5>
-          <canvas id="speedY" width="10" height="10"></canvas>
-        </div>
         <div class="col-2">
-          <h5 style="text-align: center">Depth</h5>
-          <canvas id="depth" width="30" height="30"></canvas>
+          <div class="row">
+            <div class="col-6">
+              <h6 style="text-align: center">Speed Right:::</h6>
+              <canvas id="speedRight" width="10" height="10"></canvas>
+            </div>
+            <div class="col-6">
+              <h6 style="text-align: center">Speed Left:::</h6>
+              <canvas id="speedLeft" width="10" height="10"></canvas>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <h6 style="text-align: center">Speed Top Right:::</h6>
+              <canvas id="speedTopRight" width="10" height="10"></canvas>
+            </div>
+            <div class="col-6">
+              <h6 style="text-align: center">Speed Top Left:::</h6>
+              <canvas id="speedTopLeft" width="10" height="10"></canvas>
+            </div>
+          </div>
         </div>
-        <div class="col-4">
+        <div class="col-3">
+          <h5 style="text-align: center">Depth</h5>
+          <canvas id="depth" width="30" height="20"></canvas>
+        </div>
+        <div class="col-3">
           <h5 style="text-align: center">Temperature</h5>
           <canvas id="temp" width="100" height="40"></canvas>
         </div>
       </div>
       <div class="row">
         <div class="col-3">
+          <h5 style="text-align: center">Tilt</h5>
+          <canvas id="tlt" width="10" height="10"></canvas>
+        </div>
+        <div class="col-3">
           <h3>Received Datas</h3>
           <div id="TMP"></div>
           <div id="GYR"></div>
           <div id="ACC"></div>
+          <div id="TLT"></div>
           <div id="SPD"></div>
           <div id="SON"></div>
           <!--
@@ -50,6 +69,14 @@
           <h1>Received Datas</h1>
           <textarea rows="30" cols="20" id="incomingData"></textarea>
           -->
+        </div>
+        <div class="col-7">
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-3">
+
         </div>
         <div class="col-4">
 
