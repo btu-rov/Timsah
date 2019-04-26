@@ -1,4 +1,137 @@
-EESchema Schematic File Version 2
-EELAYER 25 0
+EESchema Schematic File Version 4
+EELAYER 26 0
 EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Symols:PIC18F45K22-IP U?
+U 1 1 5CC19E1F
+P 3350 2250
+F 0 "U?" H 2150 3500 50  0000 C CNN
+F 1 "PIC18F45K22-IP" H 2400 3400 50  0000 C CNN
+F 2 "Package_DIP:DIP-42_W15.24mm_LongPads" H 3200 2050 50  0001 C CIN
+F 3 "" H 3300 1850 50  0001 C CNN
+	1    3350 2250
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR?
+U 1 1 5CC1B7B1
+P 3350 1000
+F 0 "#PWR?" H 3350 850 50  0001 C CNN
+F 1 "+5V" H 3365 1173 50  0000 C CNN
+F 2 "" H 3350 1000 50  0001 C CNN
+F 3 "" H 3350 1000 50  0001 C CNN
+	1    3350 1000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3350 1000 3250 1000
+Wire Wire Line
+	3250 1000 3250 1050
+Wire Wire Line
+	3350 1000 3450 1000
+Wire Wire Line
+	3450 1000 3450 1050
+Connection ~ 3350 1000
+$Comp
+L power:GND #PWR?
+U 1 1 5CC1B7FA
+P 3350 3500
+F 0 "#PWR?" H 3350 3250 50  0001 C CNN
+F 1 "GND" H 3355 3327 50  0000 C CNN
+F 2 "" H 3350 3500 50  0001 C CNN
+F 3 "" H 3350 3500 50  0001 C CNN
+	1    3350 3500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3350 3500 3350 3450
+Wire Wire Line
+	3350 3450 3250 3450
+Wire Wire Line
+	3350 3450 3450 3450
+Connection ~ 3350 3450
+$Comp
+L Device:R R?
+U 1 1 5CC1B98D
+P 4800 1000
+F 0 "R?" H 4870 1046 50  0000 L CNN
+F 1 "R" H 4870 955 50  0000 L CNN
+F 2 "" V 4730 1000 50  0001 C CNN
+F 3 "~" H 4800 1000 50  0001 C CNN
+	1    4800 1000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4650 1250 4800 1250
+Wire Wire Line
+	4800 1250 4800 1150
+$Comp
+L power:+5V #PWR?
+U 1 1 5CC1BA35
+P 4800 800
+F 0 "#PWR?" H 4800 650 50  0001 C CNN
+F 1 "+5V" H 4815 973 50  0000 C CNN
+F 2 "" H 4800 800 50  0001 C CNN
+F 3 "" H 4800 800 50  0001 C CNN
+	1    4800 800 
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4800 800  4800 850 
+$Comp
+L Connector:Screw_Terminal_01x03 J?
+U 1 1 5CC1BAEB
+P 6500 1350
+F 0 "J?" H 6450 1700 50  0000 L CNN
+F 1 "SAG_MOTORLAR" H 6450 1600 50  0000 L CNN
+F 2 "" H 6500 1350 50  0001 C CNN
+F 3 "~" H 6500 1350 50  0001 C CNN
+	1    6500 1350
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Screw_Terminal_01x03 J?
+U 1 1 5CC1BB48
+P 6500 1950
+F 0 "J?" H 6450 2300 50  0000 L CNN
+F 1 "SOL_MOTORLAR" H 6450 2200 50  0000 L CNN
+F 2 "" H 6500 1950 50  0001 C CNN
+F 3 "~" H 6500 1950 50  0001 C CNN
+	1    6500 1950
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Screw_Terminal_01x03 J?
+U 1 1 5CC1BB72
+P 5500 2950
+F 0 "J?" H 5579 2992 50  0000 L CNN
+F 1 "UST_MOTOR1" H 5579 2901 50  0000 L CNN
+F 2 "" H 5500 2950 50  0001 C CNN
+F 3 "~" H 5500 2950 50  0001 C CNN
+	1    5500 2950
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Screw_Terminal_01x03 J?
+U 1 1 5CC1BB9E
+P 6500 2900
+F 0 "J?" H 6579 2942 50  0000 L CNN
+F 1 "UST_MOTOR2" H 6579 2851 50  0000 L CNN
+F 2 "" H 6500 2900 50  0001 C CNN
+F 3 "~" H 6500 2900 50  0001 C CNN
+	1    6500 2900
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
