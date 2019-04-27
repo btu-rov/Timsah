@@ -1,3 +1,9 @@
 EESchema-DOCLIB  Version 2.0
 #
+$CMP LM338
+D 5A regulator, positive, adjustable output, TO-3
+K linear regulator ldo adjustable positive obsolete
+F http://www.ti.com/lit/ds/snvs771c/snvs771c.pdf
+$ENDCMP
+#
 #End Doc Library
