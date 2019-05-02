@@ -160,11 +160,11 @@ $EndComp
 Wire Wire Line
 	6100 1250 6150 1250
 Text GLabel 4950 1350 0    50   Input ~ 0
-BEC1
+BEC3
 Text GLabel 6100 950  0    50   Input ~ 0
-BEC1
+BEC2
 Text GLabel 6100 1350 0    50   Input ~ 0
-BEC1
+BEC4
 Wire Wire Line
 	6100 950  6150 950 
 Wire Wire Line
@@ -175,22 +175,6 @@ Wire Wire Line
 	6100 1350 6150 1350
 Text Notes 5100 1700 0    100  ~ 20
 ESC Bağlantıları
-Text GLabel 900  2600 0    50   Input ~ 0
-PWM1
-Wire Wire Line
-	900  2600 1000 2600
-Text GLabel 3800 2700 2    50   Input ~ 0
-PWM2
-Wire Wire Line
-	3800 2700 3700 2700
-Text GLabel 3800 2900 2    50   Input ~ 0
-PWM3
-Wire Wire Line
-	3800 2900 3700 2900
-Text GLabel 900  1600 0    50   Input ~ 0
-PWM4
-Wire Wire Line
-	900  1600 1000 1600
 $Comp
 L Connector:Conn_01x04_Female J11
 U 1 1 5CC29023
@@ -1297,12 +1281,12 @@ Wire Notes Line
 $Comp
 L Connector:Conn_01x06_Male J2
 U 1 1 5D05755B
-P 5150 3850
-F 0 "J2" V 5212 4094 50  0000 L CNN
-F 1 "ICSP_Main" V 5100 3650 50  0000 L CNN
-F 2 "" H 5150 3850 50  0001 C CNN
-F 3 "~" H 5150 3850 50  0001 C CNN
-	1    5150 3850
+P 5150 3350
+F 0 "J2" V 5212 3594 50  0000 L CNN
+F 1 "ICSP_Main" V 5100 3150 50  0000 L CNN
+F 2 "" H 5150 3350 50  0001 C CNN
+F 3 "~" H 5150 3350 50  0001 C CNN
+	1    5150 3350
 	0    -1   1    0   
 $EndComp
 Text GLabel 3750 950  1    50   Input ~ 0
@@ -1335,96 +1319,84 @@ Wire Wire Line
 	3800 3000 3700 3000
 Wire Wire Line
 	3700 3100 3800 3100
-Text GLabel 5350 4150 3    50   Input ~ 0
+Text GLabel 5350 3550 3    50   Input ~ 0
 PGC1
-Text GLabel 5250 4150 3    50   Input ~ 0
+Text GLabel 5250 3550 3    50   Input ~ 0
 PGD1
-Text GLabel 4950 4150 3    50   Input ~ 0
+Text GLabel 4950 3550 3    50   Input ~ 0
 ~MCLR1
-Wire Wire Line
-	4950 4150 4950 4050
 $Comp
 L power:+5V #PWR0136
 U 1 1 5D0D2792
-P 5050 4550
-F 0 "#PWR0136" H 5050 4400 50  0001 C CNN
-F 1 "+5V" H 5065 4723 50  0000 C CNN
-F 2 "" H 5050 4550 50  0001 C CNN
-F 3 "" H 5050 4550 50  0001 C CNN
-	1    5050 4550
+P 5050 3950
+F 0 "#PWR0136" H 5050 3800 50  0001 C CNN
+F 1 "+5V" H 5065 4123 50  0000 C CNN
+F 2 "" H 5050 3950 50  0001 C CNN
+F 3 "" H 5050 3950 50  0001 C CNN
+	1    5050 3950
 	0    -1   -1   0   
 $EndComp
 Wire Wire Line
-	5050 4050 5050 4550
+	5050 3550 5050 3950
 $Comp
 L power:GND #PWR0137
 U 1 1 5D0DC3E9
-P 5150 4400
-F 0 "#PWR0137" H 5150 4150 50  0001 C CNN
-F 1 "GND" H 5155 4227 50  0000 C CNN
-F 2 "" H 5150 4400 50  0001 C CNN
-F 3 "" H 5150 4400 50  0001 C CNN
-	1    5150 4400
+P 5150 3700
+F 0 "#PWR0137" H 5150 3450 50  0001 C CNN
+F 1 "GND" H 5155 3527 50  0000 C CNN
+F 2 "" H 5150 3700 50  0001 C CNN
+F 3 "" H 5150 3700 50  0001 C CNN
+	1    5150 3700
 	-1   0    0    -1  
 $EndComp
 Wire Wire Line
-	5150 4400 5150 4050
-Wire Wire Line
-	5250 4150 5250 4050
-Wire Wire Line
-	5350 4150 5350 4050
-NoConn ~ 5450 4050
+	5150 3700 5150 3550
+NoConn ~ 5450 3550
 $Comp
 L Connector:Conn_01x06_Male J8
 U 1 1 5D100621
-P 6250 3850
-F 0 "J8" V 6312 4094 50  0000 L CNN
-F 1 "ICSP_Slave" V 6200 3600 50  0000 L CNN
-F 2 "" H 6250 3850 50  0001 C CNN
-F 3 "~" H 6250 3850 50  0001 C CNN
-	1    6250 3850
+P 6250 3350
+F 0 "J8" V 6312 3594 50  0000 L CNN
+F 1 "ICSP_Slave" V 6200 3100 50  0000 L CNN
+F 2 "" H 6250 3350 50  0001 C CNN
+F 3 "~" H 6250 3350 50  0001 C CNN
+	1    6250 3350
 	0    -1   1    0   
 $EndComp
-Text GLabel 6450 4150 3    50   Input ~ 0
+Text GLabel 6450 3550 3    50   Input ~ 0
 PGC2
-Text GLabel 6350 4150 3    50   Input ~ 0
+Text GLabel 6350 3550 3    50   Input ~ 0
 PGD2
-Text GLabel 6050 4150 3    50   Input ~ 0
+Text GLabel 6050 3550 3    50   Input ~ 0
 ~MCLR2
-Wire Wire Line
-	6050 4150 6050 4050
 $Comp
 L power:+5V #PWR0138
 U 1 1 5D10062F
-P 6150 4550
-F 0 "#PWR0138" H 6150 4400 50  0001 C CNN
-F 1 "+5V" H 6165 4723 50  0000 C CNN
-F 2 "" H 6150 4550 50  0001 C CNN
-F 3 "" H 6150 4550 50  0001 C CNN
-	1    6150 4550
+P 6150 3950
+F 0 "#PWR0138" H 6150 3800 50  0001 C CNN
+F 1 "+5V" H 6165 4123 50  0000 C CNN
+F 2 "" H 6150 3950 50  0001 C CNN
+F 3 "" H 6150 3950 50  0001 C CNN
+	1    6150 3950
 	0    -1   -1   0   
 $EndComp
 Wire Wire Line
-	6150 4050 6150 4550
+	6150 3550 6150 3950
 $Comp
 L power:GND #PWR0139
 U 1 1 5D10063A
-P 6250 4400
-F 0 "#PWR0139" H 6250 4150 50  0001 C CNN
-F 1 "GND" H 6255 4227 50  0000 C CNN
-F 2 "" H 6250 4400 50  0001 C CNN
-F 3 "" H 6250 4400 50  0001 C CNN
-	1    6250 4400
+P 6250 3700
+F 0 "#PWR0139" H 6250 3450 50  0001 C CNN
+F 1 "GND" H 6255 3527 50  0000 C CNN
+F 2 "" H 6250 3700 50  0001 C CNN
+F 3 "" H 6250 3700 50  0001 C CNN
+	1    6250 3700
 	-1   0    0    -1  
 $EndComp
 Wire Wire Line
-	6250 4400 6250 4050
-Wire Wire Line
-	6350 4150 6350 4050
-Wire Wire Line
-	6450 4150 6450 4050
-NoConn ~ 6550 4050
-Text Notes 5500 5000 0    100  ~ 20
+	6250 3700 6250 3550
+NoConn ~ 6550 3550
+Text Notes 5500 4250 0    100  ~ 20
 ICSP
 Text GLabel 900  3100 0    50   Input ~ 0
 RX
@@ -1578,7 +1550,6 @@ NoConn ~ 3700 6500
 NoConn ~ 1000 6700
 NoConn ~ 1000 6600
 NoConn ~ 1000 6500
-NoConn ~ 1000 6200
 NoConn ~ 1000 6100
 NoConn ~ 1000 5800
 NoConn ~ 1000 5700
@@ -1586,4 +1557,79 @@ NoConn ~ 1000 5300
 NoConn ~ 1000 4900
 NoConn ~ 1000 4800
 NoConn ~ 1000 4700
+$Comp
+L Connector:Conn_01x02_Male J16
+U 1 1 5D4A8067
+P 5150 4500
+F 0 "J16" V 5212 4544 50  0000 L CNN
+F 1 "Jetson_I2C" V 5100 4250 50  0000 L CNN
+F 2 "" H 5150 4500 50  0001 C CNN
+F 3 "~" H 5150 4500 50  0001 C CNN
+	1    5150 4500
+	0    1    1    0   
+$EndComp
+Text GLabel 5150 4800 3    50   Input ~ 0
+SCL
+Text GLabel 5050 4800 3    50   Input ~ 0
+SDA
+Wire Wire Line
+	5150 4800 5150 4700
+Wire Wire Line
+	5050 4700 5050 4800
+Wire Notes Line
+	4400 4300 7000 4300
+Wire Notes Line
+	5800 4300 5800 5400
+$Comp
+L Connector:Conn_01x03_Female J17
+U 1 1 5D4EAFD3
+P 6300 4500
+F 0 "J17" V 6238 4312 50  0000 R CNN
+F 1 "Servo" V 6350 4600 50  0000 R CNN
+F 2 "" H 6300 4500 50  0001 C CNN
+F 3 "~" H 6300 4500 50  0001 C CNN
+	1    6300 4500
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:GND #PWR01
+U 1 1 5D4ECCA1
+P 6400 4750
+F 0 "#PWR01" H 6400 4500 50  0001 C CNN
+F 1 "GND" H 6405 4577 50  0000 C CNN
+F 2 "" H 6400 4750 50  0001 C CNN
+F 3 "" H 6400 4750 50  0001 C CNN
+	1    6400 4750
+	0    -1   1    0   
+$EndComp
+Wire Wire Line
+	6400 4750 6400 4700
+Wire Wire Line
+	900  2600 1000 2600
+Text GLabel 900  2600 0    50   Input ~ 0
+PWM1
+Wire Wire Line
+	3800 2900 3700 2900
+Text GLabel 3800 2900 2    50   Input ~ 0
+PWM3
+Wire Wire Line
+	3800 2700 3700 2700
+Text GLabel 3800 2700 2    50   Input ~ 0
+PWM2
+Wire Wire Line
+	900  1600 1000 1600
+Text GLabel 900  1600 0    50   Input ~ 0
+PWM4
+Text GLabel 6300 4700 3    50   Input ~ 0
+BEC3
+Text GLabel 6200 4700 3    50   Input ~ 0
+SERVO
+Text GLabel 900  6200 0    50   Input ~ 0
+SERVO
+Wire Wire Line
+	900  6200 1000 6200
+Text Notes 4600 5350 0    100  ~ 20
+     I2C\nHaberleşmesi
+Text Notes 6050 5350 0    100  ~ 20
+ Servo\nKontrolü
 $EndSCHEMATC
