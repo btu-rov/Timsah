@@ -1,0 +1,319 @@
+EESchema Schematic File Version 4
+LIBS:Timsah_Main_Board-cache
+EELAYER 29 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 2 2
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Driver_LED:PCA9685PW U?
+U 1 1 5D31BBA0
+P 1900 1950
+F 0 "U?" H 1450 2800 50  0000 C CNN
+F 1 "PCA9685PW" H 2200 2800 50  0000 C CNN
+F 2 "Package_SO:TSSOP-28_4.4x9.7mm_P0.65mm" H 1925 975 50  0001 L CNN
+F 3 "http://www.nxp.com/documents/data_sheet/PCA9685.pdf" H 1500 2650 50  0001 C CNN
+	1    1900 1950
+	1    0    0    -1  
+$EndComp
+Text HLabel 1200 1250 0    50   Input ~ 0
+SCL
+Text HLabel 1200 1350 0    50   Input ~ 0
+SDA
+NoConn ~ 1200 1450
+$Comp
+L power:GND #PWR?
+U 1 1 5D321A1F
+P 1150 1550
+F 0 "#PWR?" H 1150 1300 50  0001 C CNN
+F 1 "GND" V 1155 1422 50  0000 R CNN
+F 2 "" H 1150 1550 50  0001 C CNN
+F 3 "" H 1150 1550 50  0001 C CNN
+	1    1150 1550
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	1150 1550 1200 1550
+$Comp
+L Connector:Screw_Terminal_01x03 J?
+U 1 1 5D363AF7
+P 4100 850
+F 0 "J?" H 4180 892 50  0000 L CNN
+F 1 "SAĞ ÖN" H 4180 801 50  0000 L CNN
+F 2 "" H 4100 850 50  0001 C CNN
+F 3 "~" H 4100 850 50  0001 C CNN
+	1    4100 850 
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Screw_Terminal_01x03 J?
+U 1 1 5D364A61
+P 4100 1300
+F 0 "J?" H 4180 1342 50  0000 L CNN
+F 1 "SOL ÖN" H 4180 1251 50  0000 L CNN
+F 2 "" H 4100 1300 50  0001 C CNN
+F 3 "~" H 4100 1300 50  0001 C CNN
+	1    4100 1300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Screw_Terminal_01x03 J?
+U 1 1 5D364DE7
+P 5050 850
+F 0 "J?" H 5130 892 50  0000 L CNN
+F 1 "SAĞ ARKA" H 5130 801 50  0000 L CNN
+F 2 "" H 5050 850 50  0001 C CNN
+F 3 "~" H 5050 850 50  0001 C CNN
+	1    5050 850 
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Screw_Terminal_01x03 J?
+U 1 1 5D3656A9
+P 5050 1300
+F 0 "J?" H 5130 1342 50  0000 L CNN
+F 1 "SOL ARKA" H 5130 1251 50  0000 L CNN
+F 2 "" H 5050 1300 50  0001 C CNN
+F 3 "~" H 5050 1300 50  0001 C CNN
+	1    5050 1300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Screw_Terminal_01x03 J?
+U 1 1 5D366258
+P 6050 850
+F 0 "J?" H 6130 892 50  0000 L CNN
+F 1 "SAĞ ÜST" H 6130 801 50  0000 L CNN
+F 2 "" H 6050 850 50  0001 C CNN
+F 3 "~" H 6050 850 50  0001 C CNN
+	1    6050 850 
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Screw_Terminal_01x03 J?
+U 1 1 5D366978
+P 6050 1300
+F 0 "J?" H 6130 1342 50  0000 L CNN
+F 1 "SOL ÜST" H 6130 1251 50  0000 L CNN
+F 2 "" H 6050 1300 50  0001 C CNN
+F 3 "~" H 6050 1300 50  0001 C CNN
+	1    6050 1300
+	1    0    0    -1  
+$EndComp
+Text GLabel 3900 850  0    50   Input ~ 0
+BEC1
+Text GLabel 4850 850  0    50   Input ~ 0
+BEC2
+Text GLabel 5850 850  0    50   Input ~ 0
+BEC3
+Text GLabel 3900 1300 0    50   Input ~ 0
+BEC4
+Text GLabel 4850 1300 0    50   Input ~ 0
+BEC5
+Text GLabel 5850 1300 0    50   Input ~ 0
+BEC6
+$Comp
+L power:GND #PWR?
+U 1 1 5D3697DD
+P 3900 950
+F 0 "#PWR?" H 3900 700 50  0001 C CNN
+F 1 "GND" V 3905 822 50  0000 R CNN
+F 2 "" H 3900 950 50  0001 C CNN
+F 3 "" H 3900 950 50  0001 C CNN
+	1    3900 950 
+	0    1    1    0   
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5D369CE2
+P 4850 950
+F 0 "#PWR?" H 4850 700 50  0001 C CNN
+F 1 "GND" V 4855 822 50  0000 R CNN
+F 2 "" H 4850 950 50  0001 C CNN
+F 3 "" H 4850 950 50  0001 C CNN
+	1    4850 950 
+	0    1    1    0   
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5D36A00C
+P 5850 950
+F 0 "#PWR?" H 5850 700 50  0001 C CNN
+F 1 "GND" V 5855 822 50  0000 R CNN
+F 2 "" H 5850 950 50  0001 C CNN
+F 3 "" H 5850 950 50  0001 C CNN
+	1    5850 950 
+	0    1    1    0   
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5D36A24E
+P 5850 1400
+F 0 "#PWR?" H 5850 1150 50  0001 C CNN
+F 1 "GND" V 5855 1272 50  0000 R CNN
+F 2 "" H 5850 1400 50  0001 C CNN
+F 3 "" H 5850 1400 50  0001 C CNN
+	1    5850 1400
+	0    1    1    0   
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5D36A50A
+P 4850 1400
+F 0 "#PWR?" H 4850 1150 50  0001 C CNN
+F 1 "GND" V 4855 1272 50  0000 R CNN
+F 2 "" H 4850 1400 50  0001 C CNN
+F 3 "" H 4850 1400 50  0001 C CNN
+	1    4850 1400
+	0    1    1    0   
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5D36A801
+P 3900 1400
+F 0 "#PWR?" H 3900 1150 50  0001 C CNN
+F 1 "GND" V 3905 1272 50  0000 R CNN
+F 2 "" H 3900 1400 50  0001 C CNN
+F 3 "" H 3900 1400 50  0001 C CNN
+	1    3900 1400
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	2600 1250 2950 1250
+Text Label 2950 1250 2    50   ~ 0
+PWM_FR
+Wire Wire Line
+	2600 1350 2950 1350
+Wire Wire Line
+	2600 1450 2950 1450
+Wire Wire Line
+	2600 1550 2950 1550
+Wire Wire Line
+	2600 1650 2950 1650
+Wire Wire Line
+	2600 1750 2950 1750
+Text Label 2950 1450 2    50   ~ 0
+PWM_BR
+Text Label 2950 1550 2    50   ~ 0
+PWM_BL
+Text Label 2950 1650 2    50   ~ 0
+PWM_UR
+Text Label 2950 1750 2    50   ~ 0
+PWM_UL
+Text Label 2950 1350 2    50   ~ 0
+PWM_FL
+NoConn ~ 2600 2050
+NoConn ~ 2600 2150
+NoConn ~ 2600 2250
+NoConn ~ 2600 2350
+NoConn ~ 2600 2450
+NoConn ~ 2600 2550
+NoConn ~ 2600 2650
+NoConn ~ 2600 2750
+Wire Wire Line
+	2600 1850 3250 1850
+Wire Wire Line
+	2600 1950 3250 1950
+Text Label 3250 1850 2    50   ~ 0
+SERVO_CAMERA
+Text Label 3250 1950 2    50   ~ 0
+SERVO_GRIPPER
+Wire Wire Line
+	1200 2150 1100 2150
+Wire Wire Line
+	1100 2150 1100 2250
+Wire Wire Line
+	1100 2650 1200 2650
+Wire Wire Line
+	1200 2550 1100 2550
+Connection ~ 1100 2550
+Wire Wire Line
+	1100 2550 1100 2650
+Wire Wire Line
+	1200 2450 1100 2450
+Connection ~ 1100 2450
+Wire Wire Line
+	1100 2450 1100 2550
+Wire Wire Line
+	1200 2350 1100 2350
+Connection ~ 1100 2350
+Wire Wire Line
+	1100 2350 1100 2400
+Wire Wire Line
+	1200 2250 1100 2250
+Connection ~ 1100 2250
+Wire Wire Line
+	1100 2250 1100 2350
+$Comp
+L power:GND #PWR?
+U 1 1 5D3C07D4
+P 950 2400
+F 0 "#PWR?" H 950 2150 50  0001 C CNN
+F 1 "GND" V 955 2272 50  0000 R CNN
+F 2 "" H 950 2400 50  0001 C CNN
+F 3 "" H 950 2400 50  0001 C CNN
+	1    950  2400
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	950  2400 1100 2400
+Connection ~ 1100 2400
+Wire Wire Line
+	1100 2400 1100 2450
+$Comp
+L power:GND #PWR?
+U 1 1 5D3C121D
+P 1900 3150
+F 0 "#PWR?" H 1900 2900 50  0001 C CNN
+F 1 "GND" H 1905 2977 50  0000 C CNN
+F 2 "" H 1900 3150 50  0001 C CNN
+F 3 "" H 1900 3150 50  0001 C CNN
+	1    1900 3150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1900 3150 1900 3050
+Text GLabel 1900 850  1    50   Input ~ 0
+BEC3
+Wire Wire Line
+	1900 850  1900 950 
+Wire Notes Line
+	3400 500  3400 3850
+Wire Notes Line
+	3400 3850 500  3850
+Wire Notes Line
+	3400 1850 6600 1850
+Wire Notes Line
+	6600 1850 6600 500 
+$Comp
+L Connector:Conn_01x03_Male J?
+U 1 1 5D3CE1F8
+P 3900 2500
+F 0 "J?" H 4000 2750 50  0000 C CNN
+F 1 "SERVO Camera" H 4000 2300 50  0000 C CNN
+F 2 "" H 3900 2500 50  0001 C CNN
+F 3 "~" H 3900 2500 50  0001 C CNN
+	1    3900 2500
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Conn_01x03_Male J?
+U 1 1 5D3CE9B7
+P 5100 2500
+F 0 "J?" H 5200 2750 50  0000 C CNN
+F 1 "SERVO Gripper" H 5200 2300 50  0000 C CNN
+F 2 "" H 5100 2500 50  0001 C CNN
+F 3 "~" H 5100 2500 50  0001 C CNN
+	1    5100 2500
+	1    0    0    -1  
+$EndComp
+$EndSCHEMATC

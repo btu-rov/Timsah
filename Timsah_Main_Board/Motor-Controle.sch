@@ -1,0 +1,385 @@
+EESchema Schematic File Version 4
+LIBS:Timsah_Main_Board-cache
+EELAYER 29 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 2 2
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+Text HLabel 1200 1250 0    50   Input ~ 0
+SCL
+Text HLabel 1200 1350 0    50   Input ~ 0
+SDA
+NoConn ~ 1200 1450
+$Comp
+L Connector:Screw_Terminal_01x03 J17
+U 1 1 5D3656A9
+P 5050 1300
+F 0 "J17" H 5130 1342 50  0000 L CNN
+F 1 "SOL ARKA" H 5130 1251 50  0000 L CNN
+F 2 "" H 5050 1300 50  0001 C CNN
+F 3 "~" H 5050 1300 50  0001 C CNN
+	1    5050 1300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Screw_Terminal_01x03 J19
+U 1 1 5D366258
+P 6050 850
+F 0 "J19" H 6130 892 50  0000 L CNN
+F 1 "SAĞ ÜST" H 6130 801 50  0000 L CNN
+F 2 "" H 6050 850 50  0001 C CNN
+F 3 "~" H 6050 850 50  0001 C CNN
+	1    6050 850 
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Screw_Terminal_01x03 J20
+U 1 1 5D366978
+P 6050 1300
+F 0 "J20" H 6130 1342 50  0000 L CNN
+F 1 "SOL ÜST" H 6130 1251 50  0000 L CNN
+F 2 "" H 6050 1300 50  0001 C CNN
+F 3 "~" H 6050 1300 50  0001 C CNN
+	1    6050 1300
+	1    0    0    -1  
+$EndComp
+Text GLabel 3900 850  0    50   Input ~ 0
+BEC1
+Text GLabel 4850 850  0    50   Input ~ 0
+BEC2
+Text GLabel 5850 850  0    50   Input ~ 0
+BEC3
+Text GLabel 3900 1300 0    50   Input ~ 0
+BEC4
+Text GLabel 4850 1300 0    50   Input ~ 0
+BEC5
+Text GLabel 5850 1300 0    50   Input ~ 0
+BEC6
+$Comp
+L power:GND #PWR07
+U 1 1 5D369CE2
+P 4850 950
+F 0 "#PWR07" H 4850 700 50  0001 C CNN
+F 1 "GND" V 4855 822 50  0000 R CNN
+F 2 "" H 4850 950 50  0001 C CNN
+F 3 "" H 4850 950 50  0001 C CNN
+	1    4850 950 
+	0    1    1    0   
+$EndComp
+$Comp
+L power:GND #PWR010
+U 1 1 5D36A00C
+P 5850 950
+F 0 "#PWR010" H 5850 700 50  0001 C CNN
+F 1 "GND" V 5855 822 50  0000 R CNN
+F 2 "" H 5850 950 50  0001 C CNN
+F 3 "" H 5850 950 50  0001 C CNN
+	1    5850 950 
+	0    1    1    0   
+$EndComp
+$Comp
+L power:GND #PWR011
+U 1 1 5D36A24E
+P 5850 1400
+F 0 "#PWR011" H 5850 1150 50  0001 C CNN
+F 1 "GND" V 5855 1272 50  0000 R CNN
+F 2 "" H 5850 1400 50  0001 C CNN
+F 3 "" H 5850 1400 50  0001 C CNN
+	1    5850 1400
+	0    1    1    0   
+$EndComp
+$Comp
+L power:GND #PWR08
+U 1 1 5D36A50A
+P 4850 1400
+F 0 "#PWR08" H 4850 1150 50  0001 C CNN
+F 1 "GND" V 4855 1272 50  0000 R CNN
+F 2 "" H 4850 1400 50  0001 C CNN
+F 3 "" H 4850 1400 50  0001 C CNN
+	1    4850 1400
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	2600 1250 2950 1250
+Text Label 2950 1250 2    50   ~ 0
+PWM_FR
+Wire Wire Line
+	2600 1350 2950 1350
+Wire Wire Line
+	2600 1450 2950 1450
+Wire Wire Line
+	2600 1550 2950 1550
+Wire Wire Line
+	2600 1650 2950 1650
+Wire Wire Line
+	2600 1750 2950 1750
+Text Label 2950 1450 2    50   ~ 0
+PWM_BR
+Text Label 2950 1550 2    50   ~ 0
+PWM_BL
+Text Label 2950 1650 2    50   ~ 0
+PWM_UR
+Text Label 2950 1750 2    50   ~ 0
+PWM_UL
+Text Label 2950 1350 2    50   ~ 0
+PWM_FL
+NoConn ~ 2600 2050
+NoConn ~ 2600 2150
+NoConn ~ 2600 2250
+NoConn ~ 2600 2350
+NoConn ~ 2600 2450
+NoConn ~ 2600 2550
+NoConn ~ 2600 2650
+NoConn ~ 2600 2750
+Wire Wire Line
+	2600 1850 3250 1850
+Wire Wire Line
+	2600 1950 3250 1950
+Text Label 3250 1850 2    50   ~ 0
+SERVO_CAMERA
+Text Label 3250 1950 2    50   ~ 0
+SERVO_GRIPPER
+Wire Wire Line
+	1200 2150 1100 2150
+Wire Wire Line
+	1100 2150 1100 2250
+Wire Wire Line
+	1100 2650 1200 2650
+Wire Wire Line
+	1200 2550 1100 2550
+Connection ~ 1100 2550
+Wire Wire Line
+	1100 2550 1100 2650
+Wire Wire Line
+	1200 2450 1100 2450
+Connection ~ 1100 2450
+Wire Wire Line
+	1100 2450 1100 2550
+Wire Wire Line
+	1200 2350 1100 2350
+Connection ~ 1100 2350
+Wire Wire Line
+	1100 2350 1100 2400
+Wire Wire Line
+	1200 2250 1100 2250
+Connection ~ 1100 2250
+Wire Wire Line
+	1100 2250 1100 2350
+Wire Wire Line
+	950  2400 1100 2400
+Connection ~ 1100 2400
+Wire Wire Line
+	1100 2400 1100 2450
+Wire Wire Line
+	1900 3150 1900 3050
+Text GLabel 1900 850  1    50   Input ~ 0
+BEC3
+Wire Wire Line
+	1900 850  1900 950 
+Wire Notes Line
+	3400 500  3400 3850
+Wire Notes Line
+	3400 3850 500  3850
+Wire Notes Line
+	3400 1850 6600 1850
+$Comp
+L Connector:Conn_01x03_Male J3
+U 1 1 5D3CE1F8
+P 3750 2300
+F 0 "J3" H 3850 2550 50  0000 C CNN
+F 1 "SERVO Camera" H 4000 2100 50  0000 C CNN
+F 2 "" H 3750 2300 50  0001 C CNN
+F 3 "~" H 3750 2300 50  0001 C CNN
+	1    3750 2300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Conn_01x03_Male J18
+U 1 1 5D3CE9B7
+P 5450 2300
+F 0 "J18" H 5550 2550 50  0000 C CNN
+F 1 "SERVO Gripper" H 5700 2100 50  0000 C CNN
+F 2 "" H 5450 2300 50  0001 C CNN
+F 3 "~" H 5450 2300 50  0001 C CNN
+	1    5450 2300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Driver_LED:PCA9685PW U7
+U 1 1 5D4334BA
+P 1900 1950
+F 0 "U7" H 1450 2800 50  0000 C CNN
+F 1 "PCA9685PW" H 2200 2800 50  0000 C CNN
+F 2 "Package_SO:TSSOP-28_4.4x9.7mm_P0.65mm" H 1925 975 50  0001 L CNN
+F 3 "http://www.nxp.com/documents/data_sheet/PCA9685.pdf" H 1500 2650 50  0001 C CNN
+	1    1900 1950
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR02
+U 1 1 5D4340AE
+P 1150 1550
+F 0 "#PWR02" H 1150 1300 50  0001 C CNN
+F 1 "GND" V 1155 1422 50  0000 R CNN
+F 2 "" H 1150 1550 50  0001 C CNN
+F 3 "" H 1150 1550 50  0001 C CNN
+	1    1150 1550
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	1150 1550 1200 1550
+$Comp
+L power:GND #PWR01
+U 1 1 5D43515A
+P 950 2400
+F 0 "#PWR01" H 950 2150 50  0001 C CNN
+F 1 "GND" V 955 2272 50  0000 R CNN
+F 2 "" H 950 2400 50  0001 C CNN
+F 3 "" H 950 2400 50  0001 C CNN
+	1    950  2400
+	0    1    1    0   
+$EndComp
+$Comp
+L power:GND #PWR03
+U 1 1 5D435435
+P 1900 3150
+F 0 "#PWR03" H 1900 2900 50  0001 C CNN
+F 1 "GND" H 1905 2977 50  0000 C CNN
+F 2 "" H 1900 3150 50  0001 C CNN
+F 3 "" H 1900 3150 50  0001 C CNN
+	1    1900 3150
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Screw_Terminal_01x03 J4
+U 1 1 5D436102
+P 4100 850
+F 0 "J4" H 4180 892 50  0000 L CNN
+F 1 "SAĞ ÖN" H 4180 801 50  0000 L CNN
+F 2 "" H 4100 850 50  0001 C CNN
+F 3 "~" H 4100 850 50  0001 C CNN
+	1    4100 850 
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR04
+U 1 1 5D437749
+P 3900 950
+F 0 "#PWR04" H 3900 700 50  0001 C CNN
+F 1 "GND" V 3905 822 50  0000 R CNN
+F 2 "" H 3900 950 50  0001 C CNN
+F 3 "" H 3900 950 50  0001 C CNN
+	1    3900 950 
+	0    1    1    0   
+$EndComp
+$Comp
+L Connector:Screw_Terminal_01x03 J9
+U 1 1 5D437E28
+P 4100 1300
+F 0 "J9" H 4180 1342 50  0000 L CNN
+F 1 "SOL ÖN" H 4180 1251 50  0000 L CNN
+F 2 "" H 4100 1300 50  0001 C CNN
+F 3 "~" H 4100 1300 50  0001 C CNN
+	1    4100 1300
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR05
+U 1 1 5D438AF7
+P 3900 1400
+F 0 "#PWR05" H 3900 1150 50  0001 C CNN
+F 1 "GND" V 3905 1272 50  0000 R CNN
+F 2 "" H 3900 1400 50  0001 C CNN
+F 3 "" H 3900 1400 50  0001 C CNN
+	1    3900 1400
+	0    1    1    0   
+$EndComp
+$Comp
+L Connector:Screw_Terminal_01x03 J10
+U 1 1 5D43955D
+P 5050 850
+F 0 "J10" H 5130 892 50  0000 L CNN
+F 1 "SAĞ ARKA" H 5130 801 50  0000 L CNN
+F 2 "" H 5050 850 50  0001 C CNN
+F 3 "~" H 5050 850 50  0001 C CNN
+	1    5050 850 
+	1    0    0    -1  
+$EndComp
+Text GLabel 3950 2300 2    50   Input ~ 0
+BEC1
+Text GLabel 5650 2300 2    50   Input ~ 0
+BEC2
+$Comp
+L power:GND #PWR06
+U 1 1 5D43AC9C
+P 3950 2400
+F 0 "#PWR06" H 3950 2150 50  0001 C CNN
+F 1 "GND" V 3955 2272 50  0000 R CNN
+F 2 "" H 3950 2400 50  0001 C CNN
+F 3 "" H 3950 2400 50  0001 C CNN
+	1    3950 2400
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:GND #PWR09
+U 1 1 5D43B209
+P 5650 2400
+F 0 "#PWR09" H 5650 2150 50  0001 C CNN
+F 1 "GND" V 5655 2272 50  0000 R CNN
+F 2 "" H 5650 2400 50  0001 C CNN
+F 3 "" H 5650 2400 50  0001 C CNN
+	1    5650 2400
+	0    -1   -1   0   
+$EndComp
+Text Label 6300 2200 2    50   ~ 0
+SERVO_GRIPPER
+Text Label 4600 2200 2    50   ~ 0
+SERVO_CAMERA
+Text Label 3550 750  0    50   ~ 0
+PWM_FR
+Text Label 3550 1200 0    50   ~ 0
+PWM_FL
+Text Label 4500 750  0    50   ~ 0
+PWM_BR
+Text Label 4500 1200 0    50   ~ 0
+PWM_BL
+Text Label 5500 750  0    50   ~ 0
+PWM_UR
+Text Label 5500 1200 0    50   ~ 0
+PWM_UL
+Wire Wire Line
+	3550 750  3900 750 
+Wire Wire Line
+	3550 1200 3900 1200
+Wire Wire Line
+	4500 750  4850 750 
+Wire Wire Line
+	4850 1200 4500 1200
+Wire Wire Line
+	5850 750  5500 750 
+Wire Wire Line
+	5500 1200 5850 1200
+Wire Wire Line
+	3950 2200 4600 2200
+Wire Wire Line
+	5650 2200 6300 2200
+Text Notes 1450 3650 0    100  ~ 20
+PWM Modülü
+Text Notes 4400 1800 0    100  ~ 20
+ESC Kontrolü
+Text Notes 4350 2900 0    100  ~ 20
+Servo Kontrolü
+Wire Notes Line
+	6600 3100 3400 3100
+Wire Notes Line
+	6600 500  6600 3100
+$EndSCHEMATC
