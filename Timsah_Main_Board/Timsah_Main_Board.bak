@@ -1470,7 +1470,7 @@ Wire Wire Line
 Wire Wire Line
 	1550 7350 1800 7350
 Text Label 1800 7250 2    50   ~ 0
-SLC
+SCL
 Text Label 1800 7350 2    50   ~ 0
 SDA
 Wire Notes Line

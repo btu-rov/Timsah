@@ -376,7 +376,7 @@ Text Notes 1450 3650 0    100  ~ 20
 PWM Modülü
 Text Notes 4400 1800 0    100  ~ 20
 ESC Kontrolü
-Text Notes 4550 2900 0    100  ~ 20
+Text Notes 4350 2900 0    100  ~ 20
 Servo Kontrolü
 Wire Notes Line
 	6600 3100 3400 3100
