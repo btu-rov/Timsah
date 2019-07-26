@@ -1,0 +1,3 @@
+(fp_lib_table
+  (lib (name Timsah_Remote-Control)(type KiCad)(uri ${KIPRJMOD}/Timsah_Remote-Control.pretty)(options "")(descr ""))
+)
