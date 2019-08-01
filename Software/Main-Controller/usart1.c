@@ -30,11 +30,6 @@ void USART1_Init (void) {
     // Set baud rate to 9600
     SPBRG1 = 0xA0;
     SPBRGH1 = 0x01;
-    
-    // Disable interrupt
-    PIE1bits.RCIE = 0;
-    INTCONbits.PEIE = 0;
-    INTCONbits.GIE = 0;
 }
 
 void USART1_PutChar (uint8_t data, uint8_t newLine) {

@@ -1,6 +1,6 @@
 /* 
  * File:   
- * Author: 
+ * Author: ElektroNeo
  * Comments:
  * Revision history: 
  */
@@ -24,36 +24,6 @@
 #define BACK_LEFT       5
 #define GRIPPER         6
 #define CAMERA          7
-
-// TODO Insert appropriate #include <>
-
-// TODO Insert C++ class definitions if appropriate
-
-// TODO Insert declarations
-
-// Comment a function and leverage automatic documentation with slash star star
-/**
-    <p><b>Function prototype:</b></p>
-  
-    <p><b>Summary:</b></p>
-
-    <p><b>Description:</b></p>
-
-    <p><b>Precondition:</b></p>
-
-    <p><b>Parameters:</b></p>
-
-    <p><b>Returns:</b></p>
-
-    <p><b>Example:</b></p>
-    <code>
- 
-    </code>
-
-    <p><b>Remarks:</b></p>
- */
-// TODO Insert declarations or function prototypes (right here) to leverage 
-// live documentation
 
 void Motor_Init(void);
 void Motor(uint8_t, uint16_t);

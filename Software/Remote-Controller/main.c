@@ -18,45 +18,14 @@
         Driver Version    :  2.00
 */
 
-#include <pic18f45k22.h>
-
 #include "config.h"
 
 void main(void)
 {
-    // SCS FOSC; IRCF 16MHz_HFINTOSC; IDLEN disabled; 
-    OSCCONbits.IRCF = 0b111;
-    OSCCONbits.SCS = 0b10;
-    
-    // Disable analog pins.
-    ANSELA = 0;
-    ANSELB = 0;
-    ANSELC = 0;
-    ANSELD = 0;
-    ANSELE = 0;
-    
-    uint8_t rxData;
+    SystemInit();
     
     uint16_t pot1, pot2;
     uint8_t potReg1 = 0, potReg2 = 0;
-
-    USART1_Init();
-    ADCInitialize();
-    
-    // Set A0 as digital output for control data of MAX485.
-    TRISAbits.RA0 = 0;
-    ANSELAbits.ANSA0 = 0;
-    
-    // For pot1 analog read
-    TRISAbits.RA2 = 1;
-    ANSELAbits.ANSA2 = 1;
-    
-    TRISBbits.RB4 = 0;
-    TRISD = 0xff;
-    TRISBbits.RB0 = 0;
-
-    rxData = 'a';
-    PORTAbits.RA0 = 1; // Transmitter (MAX485) enable
     
     while (1)
     {

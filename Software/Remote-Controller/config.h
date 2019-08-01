@@ -27,6 +27,8 @@
 #include <xc.h>
 #include <stdint.h>
 #include <stdbool.h>
+#include "pin_configurations.h"
+#include "functions.h"
 #include "adc.h"
 #include "usart1.h"
 
@@ -99,7 +101,6 @@
 
 #define _XTAL_FREQ  16000000
 
+void SystemInit(void);
+
 #endif	/* CONFIG */
-/**
- End of File
-*/

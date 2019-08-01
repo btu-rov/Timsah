@@ -29,9 +29,6 @@ void SystemInit(void) {
     OSCCONbits.SCS = 0b10;
     
     GPIO();
-    //I2C_Init(100000);
-    //Motor_Init();
     USART1_Init();
-    USART2_Init();
-    Interrupts();
+    ADCInitialize();
 }

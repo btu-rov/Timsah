@@ -1,6 +1,6 @@
 /*
  * File:   i2c.c
- * Author: bahti
+ * Author: ElektroNeo
  *
  * Created on 19 Temmuz 2019 Cuma, 01:21
  */

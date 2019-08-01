@@ -1,4 +1,4 @@
-/*
+/* 
  * File:   
  * Author: ElektroNeo
  * Comments:
@@ -7,12 +7,10 @@
 
 // This is a guard condition so that contents of this file are not included
 // more than once.  
-#ifndef USART2
-#define	USART2
+#ifndef FUNCTIONS
+#define	FUNCTIONS
 
-uint8_t readedData = '-';
+uint16_t map(uint16_t, uint16_t, uint16_t, uint16_t, uint16_t);
 
-void USART2_Init (void);
-
-#endif	/* USART2 */
+#endif	/* FUNCTIONS */
 

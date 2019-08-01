@@ -1,5 +1,5 @@
 /*
- * File:   usart1.c
+ * File:   usart2.c
  * Author: ElektroNeo
  *
  * Created on 22 Temmuz 2019 Pazartesi, 01:33
@@ -29,9 +29,4 @@ void USART2_Init (void) {
     // Set baud rate to 9600
     SPBRG2 = 0xA0;
     SPBRGH2 = 0x01;
-    
-    // Enable interrupt
-    PIE3bits.RC2IE = 1;
-    INTCONbits.PEIE = 1;
-    INTCONbits.GIE = 1;
 }

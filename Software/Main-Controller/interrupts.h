@@ -1,4 +1,4 @@
-/*
+/* 
  * File:   
  * Author: ElektroNeo
  * Comments:
@@ -7,12 +7,11 @@
 
 // This is a guard condition so that contents of this file are not included
 // more than once.  
-#ifndef USART2
-#define	USART2
+#ifndef INTERRUPTS
+#define	INTERRUPTS
 
-uint8_t readedData = '-';
+void Interrupts(void);
+void __interrupt() ISR(void);
 
-void USART2_Init (void);
-
-#endif	/* USART2 */
+#endif	/* INTERRUPTS */
 

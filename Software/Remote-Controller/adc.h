@@ -1,6 +1,6 @@
 /* 
  * File:   adc.h
- * Author: ElektroNEO
+ * Author: ElektroNeo
  * Comments: 
  * Revision history: 
  */
