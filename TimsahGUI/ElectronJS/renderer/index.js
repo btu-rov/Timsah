@@ -7,7 +7,7 @@ const Readline = require('@serialport/parser-readline')
 
 var Chart = require('chart.js');
 
-const port = new SerialPort('COM7', {
+const port = new SerialPort('COM3', {
   baudRate: 9600
 })
 
@@ -135,7 +135,7 @@ parser.on('data', function(data) {
       parsedData = parseInt(data, 10)
       rovSPDdata[count] = parsedData
       count++
-      if(count == 4) {
+      if(count == 1) {
         SPDdata = rovSPDdata
         count = 0;
       }

@@ -195,7 +195,7 @@ U 1 1 5D3CE1F8
 P 3750 2200
 F 0 "J3" H 3850 2450 50  0000 C CNN
 F 1 "SERVO Camera" H 4000 2000 50  0000 C CNN
-F 2 "" H 3750 2200 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 3750 2200 50  0001 C CNN
 F 3 "~" H 3750 2200 50  0001 C CNN
 	1    3750 2200
 	1    0    0    -1  
@@ -206,7 +206,7 @@ U 1 1 5D3CE9B7
 P 5450 2200
 F 0 "J18" H 5550 2450 50  0000 C CNN
 F 1 "SERVO Gripper" H 5700 2000 50  0000 C CNN
-F 2 "" H 5450 2200 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 5450 2200 50  0001 C CNN
 F 3 "~" H 5450 2200 50  0001 C CNN
 	1    5450 2200
 	1    0    0    -1  
@@ -426,7 +426,7 @@ AR Path="/5D3B5D3E" Ref="J?"  Part="1"
 AR Path="/5D2E6747/5D3B5D3E" Ref="J22"  Part="1" 
 F 0 "J22" H 3950 3500 50  0000 L CNN
 F 1 "JSN-SR04T" H 3850 3350 50  0000 L CNN
-F 2 "" H 4150 3150 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical" H 4150 3150 50  0001 C CNN
 F 3 "~" H 4150 3150 50  0001 C CNN
 	1    4150 3150
 	1    0    0    -1  
@@ -477,7 +477,7 @@ AR Path="/5D3B5D56" Ref="J?"  Part="1"
 AR Path="/5D2E6747/5D3B5D56" Ref="J23"  Part="1" 
 F 0 "J23" H 4700 3500 50  0000 L CNN
 F 1 "JSN-SR04T" H 4600 3350 50  0000 L CNN
-F 2 "" H 4900 3150 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical" H 4900 3150 50  0001 C CNN
 F 3 "~" H 4900 3150 50  0001 C CNN
 	1    4900 3150
 	1    0    0    -1  
@@ -528,7 +528,7 @@ AR Path="/5D3B5D6E" Ref="J?"  Part="1"
 AR Path="/5D2E6747/5D3B5D6E" Ref="J24"  Part="1" 
 F 0 "J24" H 5450 3500 50  0000 L CNN
 F 1 "JSN-SR04T" H 5350 3350 50  0000 L CNN
-F 2 "" H 5650 3150 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical" H 5650 3150 50  0001 C CNN
 F 3 "~" H 5650 3150 50  0001 C CNN
 	1    5650 3150
 	1    0    0    -1  
@@ -579,7 +579,7 @@ AR Path="/5D3B687D" Ref="J?"  Part="1"
 AR Path="/5D2E6747/5D3B687D" Ref="J25"  Part="1" 
 F 0 "J25" H 6200 3500 50  0000 L CNN
 F 1 "JSN-SR04T" H 6100 3350 50  0000 L CNN
-F 2 "" H 6400 3150 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical" H 6400 3150 50  0001 C CNN
 F 3 "~" H 6400 3150 50  0001 C CNN
 	1    6400 3150
 	1    0    0    -1  

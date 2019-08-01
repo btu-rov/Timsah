@@ -1,5 +1,5 @@
 # Timsah GUI
-BTU ROV takımının Timsah projesi için oluşturulmuş bir arayüzdür. ElectronJS ile oluşturulmuştur. 
+BTU ROV takımının Timsah projesi için oluşturulmuş bir arayüzdür. ElectronJS ile oluşturulmuştur.
 GraphJS ve SerialPort paketlerini kullanmaktadır.
 
 ## Arayüz Uygulaması
