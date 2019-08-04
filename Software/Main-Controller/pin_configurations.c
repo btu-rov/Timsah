@@ -19,6 +19,8 @@ void GPIO(void) {
     ANSELE = 0x00;
     ANSELA = 0x00;
     
+    TRISB = 0;
+    
     // Set A0 as digital output for control data of MAX485.
     TRISAbits.RA0 = 0;
     // Set A1 as digital output for control data of MAX485.

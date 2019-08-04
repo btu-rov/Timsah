@@ -5,7 +5,6 @@
  * Created on 01 A?ustos 2019 Per?embe, 12:26
  */
 
-
 #include "config.h"
 
 void Interrupts(void) {

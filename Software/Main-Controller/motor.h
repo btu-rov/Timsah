@@ -28,7 +28,7 @@
 void Motor_Init(void);
 void Motor(uint8_t, uint16_t);
 void Motor_Write(uint8_t, uint8_t, uint8_t);
-//uint8_t Motor_ReadByte(uint8_t, uint8_t);
+uint8_t Motor_ReadByte(uint8_t, uint8_t);
 
 #endif	/* MOTOR */
 

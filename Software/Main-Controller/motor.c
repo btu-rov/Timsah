@@ -34,40 +34,39 @@ void Motor(uint8_t num, uint16_t speed) {
 
 void Motor_Write(uint8_t address, uint8_t reg, uint8_t data) {
     // Start condition
-    I2C_Start();
+    I2C1_Start();
     // Send slave address.
     address = (address << 1) | 0;   // Set to write.
-    I2C_Write(address);
+    I2C1_Write(address);
     // Send register address.
-    I2C_Write(reg);
+    I2C1_Write(reg);
     // Send data.
-    I2C_Write(data);
+    I2C1_Write(data);
     // Stop condition
-    I2C_Stop();
+    I2C1_Stop();
 }
-/* Not Working!!!
+
 uint8_t Motor_ReadByte(uint8_t address, uint8_t reg) {
     uint8_t receivedData;
     
     Motor_Write(0x40, MODE1, MODE1_FOR_PWM | 0b00100000);
     
-    I2C_Start();
+    I2C1_Start();
     
     // Send slave address.
     address = (address << 1) | 1;   // Set to read.
-    I2C_Write(address);
+    I2C1_Write(address);
     
     for(uint8_t i = 0; i < reg; i++) {
-        receivedData = I2C_Read(0);
+        receivedData = I2C1_Read(0);
     }
     
-    receivedData = I2C_Read(1);
+    receivedData = I2C1_Read(1);
     
     // Stop condition
-    I2C_Stop();
+    I2C1_Stop();
     
     Motor_Write(0x40, MODE1, MODE1_FOR_PWM & 0b11011111);
     
     return receivedData;
 }
-*/

@@ -30,10 +30,11 @@
 #include "functions.h"
 #include "interrupts.h"
 #include "pin_configurations.h"
-#include "i2c.h"
+#include "i2c1.h"
 #include "motor.h"
 #include "usart1.h"
 #include "usart2.h"
+#include "bno055.h"
 
 // PIC18F45K22 Configuration Bit Settings
 
