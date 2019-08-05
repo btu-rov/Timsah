@@ -2,7 +2,7 @@
  * File:   
  * Author: ElektroNeo
  * Comments:
- * Revision history: 
+ * Revision history: v1.0
  */
 
 // This is a guard condition so that contents of this file are not included
@@ -26,9 +26,9 @@
 #define CAMERA          7
 
 void Motor_Init(void);
-void Motor(uint8_t, uint16_t);
-void Motor_Write(uint8_t, uint8_t, uint8_t);
-uint8_t Motor_ReadByte(uint8_t, uint8_t);
+void Motor(uint8_t num, uint16_t speed);
+void Motor_Write(uint8_t address, uint8_t reg, uint8_t data);
+uint8_t Motor_ReadByte(uint8_t address, uint8_t reg);
 
 #endif	/* MOTOR */
 

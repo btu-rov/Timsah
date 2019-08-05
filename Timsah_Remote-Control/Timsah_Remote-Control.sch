@@ -200,7 +200,7 @@ F 3 "~" H 5650 1250 50  0001 C CNN
 $EndComp
 Text GLabel 5450 1250 0    50   Input ~ 0
 SW
-Text GLabel 4200 1750 2    50   Input ~ 0
+Text GLabel 4200 1850 2    50   Input ~ 0
 SW
 Wire Notes Line
 	6600 2150 6600 500 
@@ -517,7 +517,7 @@ Wire Wire Line
 	1300 3150 1400 3150
 Wire Wire Line
 	1400 3050 1300 3050
-Text GLabel 4200 1850 2    50   Input ~ 0
+Text GLabel 4200 1750 2    50   Input ~ 0
 ENABLE
 Wire Wire Line
 	4200 1750 4100 1750

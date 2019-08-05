@@ -1,10 +1,7 @@
 /*
  * File:   functions.c
  * Author: ElektroNeo
- *
- * Created on 01 A?ustos 2019 Per?embe, 12:37
  */
-
 
 #include "config.h"
 

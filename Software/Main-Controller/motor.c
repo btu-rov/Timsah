@@ -1,8 +1,6 @@
 /*
  * File:   motor.c
  * Author: ElektroNeo
- *
- * Created on 19 Temmuz 2019 Cuma, 01:23
  */
 
 
@@ -45,7 +43,7 @@ void Motor_Write(uint8_t address, uint8_t reg, uint8_t data) {
     // Stop condition
     I2C1_Stop();
 }
-
+/************** Not Tested! ****************/
 uint8_t Motor_ReadByte(uint8_t address, uint8_t reg) {
     uint8_t receivedData;
     

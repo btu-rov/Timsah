@@ -1,46 +1,24 @@
-/**
-  Generated Main Source File
-
-  Company:
-    Microchip Technology Inc.
-
-  File Name:
-    main.c
-
-  Summary:
-    This is the main file generated using PIC10 / PIC12 / PIC16 / PIC18 MCUs
-
-  Description:
-    This header file provides implementations for driver APIs for all modules selected in the GUI.
-    Generation Information :
-        Product Revision  :  PIC10 / PIC12 / PIC16 / PIC18 MCUs - 1.76
-        Device            :  PIC18F45K22
-        Driver Version    :  2.00
-*/
-
 #include "config.h"
 
 void main(void)
 {
     SystemInit();
     
-    uint16_t pot1, pot2;
-    uint8_t potReg1 = 0, potReg2 = 0;
+    uint8_t data[8];
+    data[DATA_SPECIAL] = 0;
     
     while (1)
     {
-        pot1 = ADCGetConversion(2, 0, 100);
-        //uint16_t result2 = ADCGetConversion(1, 0, 100);
+        data[DATA_X] = ADCGetConversion(CH_AN10, 0, 100);
+        data[DATA_Y] = ADCGetConversion(CH_AN12, 0, 100);
+        data[DATA_XD] = ADCGetConversion(CH_AN9, 0, 100);
+        data[DATA_YD] = ADCGetConversion(CH_AN8, 0, 100);
+        data[DATA_GRIPPER] = ADCGetConversion(CH_AN15, 0, 100);
+        data[DATA_CAMERA] = ADCGetConversion(CH_AN14, 0, 100);
+        data[DATA_SPECIAL] = PORTD;
         
-        
-        //USART1_PutChar('a', 0);
-        //__delay_ms(500);
-        //USART1_PutChar('b', 0);
-        //__delay_ms(500);
-        //USART1_PutString("SPD");
-        //USART1_PutString("#");
-        USART1_PutChar(pot1, 1);
-        //USART1_PutString("$$");
-        //PORTAbits.RA1 = 0; // Receiver (MAX485) enable
+        for(uint8_t i = 1; i < 8; i++) {
+            cbuss1Regs[i] = data[i];
+        }
     }
 }

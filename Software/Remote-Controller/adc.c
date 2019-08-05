@@ -17,7 +17,6 @@ void ADCInitialize(void) {
 uint16_t ADCGetConversion(uint8_t ch, uint16_t out_min, uint16_t out_max) {
     // Select the A/D channel
     ADCON0bits.CHS = ch;
-    
     // Turn on the ADC module
     ADCON0bits.ADON = 1;
     __delay_us(10);
@@ -28,6 +27,6 @@ uint16_t ADCGetConversion(uint8_t ch, uint16_t out_min, uint16_t out_max) {
     // Turn off the ADC module
     ADCON0bits.ADON = 0;
     
-    // Get result
+    // Get mapped result
     return (uint32_t)(((ADRESH & 0b11) << 8) | ADRESL) * (out_max - out_min) / (1023) + out_min;
 }

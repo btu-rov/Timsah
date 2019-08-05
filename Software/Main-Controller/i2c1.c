@@ -1,11 +1,7 @@
 /*
  * File:   i2c1.c
  * Author: ElektroNeo
- *
- * Created on 19 Temmuz 2019 Cuma, 01:21
  */
-
-#include <pic18f45k22.h>
 
 #include "config.h"
 
@@ -68,7 +64,7 @@ void I2C1_Write(uint8_t data) {
     // Send data.
     SSP1BUF = data;
     I2C1_Idle();
-    // If slave does not acknowledge...
+    // If slave does not acknowledge then stop write sequence
 	if (SSP1CON2bits.ACKSTAT){
 		// Send stop bit.
 		SSP1CON2bits.PEN = 1;
@@ -91,13 +87,11 @@ uint8_t I2C1_Read(uint8_t ack) {
             return 0;
         }
     }
-    
     // Receive data
     receivedData = SSP1BUF;
     // Send ACK=1 to stop receiving.
     SSP1CON2bits.ACKDT = ack;
     SSP1CON2bits.ACKEN = 1;
-    //I2C1_Idle();
     while(SSP1CON2bits.ACKEN);
     
     return receivedData;

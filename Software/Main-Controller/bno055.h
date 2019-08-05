@@ -2,7 +2,7 @@
  * File:   
  * Author: ElektroNeo
  * Comments:
- * Revision history: 
+ * Revision history: v1.0
  */
 
 // This is a guard condition so that contents of this file are not included
@@ -206,9 +206,9 @@
 #define REMAP_SIGN_P7 0x05
 
 void BNO055_Init(void);
-void BNO055_Write(uint8_t, uint8_t);
-void BNO055_MultiRead(uint8_t, uint8_t *, uint8_t);
-uint8_t BNO055_Read(uint8_t);
+void BNO055_Write(uint8_t regAdd, uint8_t data);
+void BNO055_MultiRead(uint8_t regAdd, uint8_t *datas, uint8_t numOfData);
+uint8_t BNO055_Read(uint8_t regAdd);
 
 #endif	/* BNO055 */
 

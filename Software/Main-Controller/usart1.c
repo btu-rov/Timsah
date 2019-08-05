@@ -1,14 +1,12 @@
 /*
  * File:   usart1.c
  * Author: ElektroNeo
- *
- * Created on 22 Temmuz 2019 Pazartesi, 01:33
  */
 
 
 #include "config.h"
 
-void USART1_Init (void) {
+void USART1_Init(void) {
     // Set ANSEL bits for i/o
     ANSELCbits.ANSC6 = 0;
     ANSELCbits.ANSC7 = 0;
@@ -32,28 +30,33 @@ void USART1_Init (void) {
     SPBRGH1 = 0x01;
 }
 
-void USART1_PutChar (uint8_t data, uint8_t newLine) {
+void USART1_PutChar(uint8_t data, uint8_t newLine) {
     // Enable transmission
     TXSTA1bits.TXEN = 1;
+    // Send data
     TXREG1 = data;
     while(!TXSTA1bits.TRMT);
+    // Send new line char if needed
     if(newLine){
         TXREG1 = '\n';
         while(!TXSTA1bits.TRMT);
     }
+    // Disable transmission
     TXSTA1bits.TXEN = 0;
 }
 
-void USART1_PutString (uint8_t *datas) {
+void USART1_PutString(uint8_t *datas) {
     // Enable transmission
     TXSTA1bits.TXEN = 1;
+    // Send chars untill NULL terminated
     for(uint8_t i = 0; datas[i] != NULL; i++) {
         TXREG1 = datas[i];
         while(!TXSTA1bits.TRMT);
     }
+    // Send new line char
     TXREG1 = '\n';
     while(!TXSTA1bits.TRMT);
-
+    // Disable transmission
     TXSTA1bits.TXEN = 0;
 }
 

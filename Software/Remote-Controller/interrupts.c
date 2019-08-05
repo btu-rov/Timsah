@@ -7,7 +7,7 @@
 
 void Interrupts(void) {
     // Enable interrupt for USART2 receive module.
-    PIE3bits.RC2IE = 1;
+    PIE1bits.RC1IE = 1;
     // Enable peripheral interrupts.
     INTCONbits.PEIE = 1;
     // Enable all unmasked interrupts.
@@ -15,13 +15,12 @@ void Interrupts(void) {
 }
 
 void __interrupt() ISR(void) {
-    // USART2 Module
-    if(PIE3bits.RC2IE && PIR3bits.RC2IF) {
+    // USART1 Module
+    if(PIE1bits.RC1IE && PIR1bits.RC1IF) {
         // Read data using usart module
-        USART2_Read();
-        // Get char for CBUS
-        CBUSM2_GetChar();
+        USART1_Read();
+        CBUSS1_Read();
         // Clear interrupt flag
-        PIR3bits.RC2IF = 0;
+        PIR1bits.RC1IF = 0;
     }
 }

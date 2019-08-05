@@ -1,26 +1,3 @@
-/**
-  @Generated PIC10 / PIC12 / PIC16 / PIC18 MCUs Header File
-
-  @Company:
-    Microchip Technology Inc.
-
-  @File Name:
-    mcc.h
-
-  @Summary:
-    This is the mcc.h file generated using PIC10 / PIC12 / PIC16 / PIC18 MCUs
-
-  @Description:
-    This header file provides implementations for driver APIs for all modules selected in the GUI.
-    Generation Information :
-        Product Revision  :  PIC10 / PIC12 / PIC16 / PIC18 MCUs - 1.76
-        Device            :  PIC18F45K22
-        Driver Version    :  2.00
-    The generated drivers are tested against the following:
-        Compiler          :  XC8 2.00 or later
-        MPLAB             :  MPLAB X 5.10
-*/
-
 #ifndef CONFIG
 #define	CONFIG
 
@@ -35,6 +12,7 @@
 #include "usart1.h"
 #include "usart2.h"
 #include "bno055.h"
+#include "cbusm2.h"
 
 // PIC18F45K22 Configuration Bit Settings
 

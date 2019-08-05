@@ -1,8 +1,6 @@
 /*
  * File:   usart1.c
  * Author: ElektroNeo
- *
- * Created on 22 Temmuz 2019 Pazartesi, 01:33
  */
 
 
@@ -21,8 +19,8 @@ void USART1_Init (void) {
 
     // Asyncronous operation
     TXSTA1bits.SYNC = 0;
-    // Disable receive
-    RCSTA1bits.CREN = 0;
+    // Enable receive
+    RCSTA1bits.CREN = 1;
     // Enable high speed
     TXSTA1bits.BRGH = 1;
     // Enable 16bit BGR value
@@ -30,35 +28,51 @@ void USART1_Init (void) {
     // Set baud rate to 9600
     SPBRG1 = 0xA0;
     SPBRGH1 = 0x01;
-    
-    // Disable interrupt
-    PIE1bits.RCIE = 0;
-    INTCONbits.PEIE = 0;
-    INTCONbits.GIE = 0;
+}
+
+void USART1_Read(void) {
+    if (RCSTA1bits.OERR) {
+    // Disable receive
+    RCSTA1bits.CREN = 0;
+    // Enable receive
+    RCSTA1bits.CREN = 1;
+    }
+    // If framing error occured reset USART
+    if(RCSTA1bits.FERR) {
+        RCSTA1bits.SPEN = 0;
+        RCSTA1bits.SPEN = 1;
+    }
+    readedData1 = RCREG1;
+    readFlag1 = 0;
 }
 
 void USART1_PutChar (uint8_t data, uint8_t newLine) {
     // Enable transmission
     TXSTA1bits.TXEN = 1;
+    // Send data
     TXREG1 = data;
     while(!TXSTA1bits.TRMT);
+    // Send new line char if needed
     if(newLine){
         TXREG1 = '\n';
         while(!TXSTA1bits.TRMT);
     }
+    // Disable transmission
     TXSTA1bits.TXEN = 0;
 }
 
 void USART1_PutString (uint8_t *datas) {
     // Enable transmission
     TXSTA1bits.TXEN = 1;
+    // Send chars untill NULL terminated
     for(uint8_t i = 0; datas[i] != NULL; i++) {
         TXREG1 = datas[i];
         while(!TXSTA1bits.TRMT);
     }
+    // Send new line
     TXREG1 = '\n';
     while(!TXSTA1bits.TRMT);
-
+    // Disable transmission
     TXSTA1bits.TXEN = 0;
 }
 
