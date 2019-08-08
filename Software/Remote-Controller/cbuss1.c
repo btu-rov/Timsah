@@ -17,16 +17,16 @@ uint8_t CBUSS1_CheckCRC(uint8_t crc, uint8_t data) {
 
 void CBUSS1_Write(uint8_t reg) {
     // Set MAX485 to write mode
-    PORTAbits.RA0 = 1;
+    PORTBbits.RB3 = 1;
     USART1_PutChar(cbuss1Regs[reg], 0);
     USART1_PutChar(CBUSS1_GenerateCRC(cbuss1Regs[reg]), 0);
     // Set MAX485 to read mode
-    PORTAbits.RA0 = 0;
+    PORTBbits.RB3 = 0;
 }
 
 void CBUSS1_Read(void) {
     // Set MAX485 to read mode
-    PORTAbits.RA0 = 0;
+    PORTBbits.RB3 = 0;
     
     // If mode not selected then read mode
     if(cbuss1Mode == 0) {
