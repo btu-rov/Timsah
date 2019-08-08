@@ -147,9 +147,9 @@ Wire Notes Line
 	6650 2150 6650 500 
 Wire Notes Line
 	6650 500  8350 500 
-Text GLabel 1300 2450 0    50   Input ~ 0
+Text GLabel 1300 1950 0    50   Input ~ 0
 VRX-A
-Text GLabel 1300 2550 0    50   Input ~ 0
+Text GLabel 1300 2050 0    50   Input ~ 0
 VRY-A
 Text GLabel 4200 2850 2    50   Input ~ 0
 VRX-B
@@ -1476,12 +1476,8 @@ Wire Wire Line
 	1300 2850 1400 2850
 Wire Wire Line
 	1400 2950 1300 2950
-Wire Wire Line
-	1300 2450 1400 2450
 Text GLabel 1300 2650 0    50   Input ~ 0
 LED
-Wire Wire Line
-	1300 2550 1400 2550
 Text GLabel 5650 6000 0    50   Input ~ 0
 LED
 Wire Wire Line
@@ -1494,8 +1490,6 @@ Wire Wire Line
 	4200 1950 4100 1950
 NoConn ~ 1400 2250
 NoConn ~ 1400 2150
-NoConn ~ 1400 2050
-NoConn ~ 1400 1950
 NoConn ~ 1400 1550
 Wire Wire Line
 	1300 1350 1400 1350
@@ -1517,4 +1511,10 @@ F 3 "" H 9100 4350 50  0001 C CNN
 	1    9100 4350
 	1    0    0    -1  
 $EndComp
+Wire Wire Line
+	1300 2050 1400 2050
+Wire Wire Line
+	1400 1950 1300 1950
+NoConn ~ 1400 2450
+NoConn ~ 1400 2550
 $EndSCHEMATC
