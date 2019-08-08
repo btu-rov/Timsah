@@ -129,7 +129,7 @@ F 3 "" H 6950 950 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	6950 950  6950 1050
-Text GLabel 1300 2650 0    50   Input ~ 0
+Text GLabel 1300 1650 0    50   Input ~ 0
 SERVO_Cam
 Text Notes 7000 2100 0    79   ~ 16
 Servo Kontrolü
@@ -147,22 +147,16 @@ Wire Notes Line
 	6650 2150 6650 500 
 Wire Notes Line
 	6650 500  8350 500 
-Text GLabel 4200 2450 2    50   Input ~ 0
+Text GLabel 1300 2450 0    50   Input ~ 0
 VRX-A
-Text GLabel 4200 2550 2    50   Input ~ 0
+Text GLabel 1300 2550 0    50   Input ~ 0
 VRY-A
-Text GLabel 4200 2650 2    50   Input ~ 0
+Text GLabel 4200 2850 2    50   Input ~ 0
 VRX-B
-Text GLabel 4200 2750 2    50   Input ~ 0
+Text GLabel 4200 2950 2    50   Input ~ 0
 VRY-B
 Wire Wire Line
-	4200 2450 4100 2450
-Wire Wire Line
-	4200 2550 4100 2550
-Wire Wire Line
 	4200 2650 4100 2650
-Wire Wire Line
-	4200 2750 4100 2750
 Wire Wire Line
 	1300 2650 1400 2650
 $Comp
@@ -470,17 +464,6 @@ Wire Wire Line
 Connection ~ 9100 4950
 Wire Wire Line
 	9100 4950 9350 4950
-$Comp
-L power:GND #PWR018
-U 1 1 5CC0738A
-P 9100 4350
-F 0 "#PWR018" H 9100 4100 50  0001 C CNN
-F 1 "GND" H 9105 4177 50  0000 C CNN
-F 2 "" H 9100 4350 50  0001 C CNN
-F 3 "" H 9100 4350 50  0001 C CNN
-	1    9100 4350
-	-1   0    0    1   
-$EndComp
 Wire Wire Line
 	9100 4350 9100 4450
 $Comp
@@ -517,10 +500,8 @@ Wire Wire Line
 	1300 3150 1400 3150
 Wire Wire Line
 	1400 3050 1300 3050
-Text GLabel 4200 1750 2    50   Input ~ 0
+Text GLabel 4200 2750 2    50   Input ~ 0
 ENABLE
-Wire Wire Line
-	4200 1750 4100 1750
 Wire Wire Line
 	4200 1850 4100 1850
 $Comp
@@ -681,18 +662,9 @@ Wire Wire Line
 	6800 2600 7200 2600
 NoConn ~ 6800 2800
 NoConn ~ 1400 1150
-NoConn ~ 1400 1250
-NoConn ~ 1400 1350
-NoConn ~ 1400 2450
-NoConn ~ 1400 2550
-NoConn ~ 1400 2850
-NoConn ~ 1400 2950
-NoConn ~ 4100 2950
-NoConn ~ 4100 2850
 NoConn ~ 4100 2250
 NoConn ~ 4100 2150
 NoConn ~ 4100 2050
-NoConn ~ 4100 1950
 NoConn ~ 4100 1450
 NoConn ~ 4100 1350
 Wire Notes Line
@@ -1197,38 +1169,28 @@ Wire Notes Line width 8 rgb(0, 0, 0)
 	2700 7100 4950 7100
 Text Notes 3250 6800 0    50   ~ 10
 Yön Kontrolü:\n15 derece sağ veya sola dönme\n1 saniye ileri veya geri gitme
-Text GLabel 1300 1950 0    50   Input ~ 0
+Text GLabel 1300 1250 0    50   Input ~ 0
 Up
-Text GLabel 1300 2050 0    50   Input ~ 0
+Text GLabel 1300 1350 0    50   Input ~ 0
 Down
-Text GLabel 1300 2250 0    50   Input ~ 0
+Text GLabel 4200 1950 2    50   Input ~ 0
 OTO_DEPTH
-Text GLabel 1300 2150 0    50   Input ~ 0
+Text GLabel 1300 2750 0    50   Input ~ 0
 TURN_BACK
-Text GLabel 1300 1550 0    50   Input ~ 0
+Text GLabel 1300 2850 0    50   Input ~ 0
 Forward
-Text GLabel 1300 1650 0    50   Input ~ 0
+Text GLabel 1300 2950 0    50   Input ~ 0
 Right
 Text GLabel 1300 1750 0    50   Input ~ 0
 Left
 Text GLabel 1300 1850 0    50   Input ~ 0
 Backward
 Wire Wire Line
-	1300 1550 1400 1550
-Wire Wire Line
 	1400 1650 1300 1650
 Wire Wire Line
 	1300 1750 1400 1750
 Wire Wire Line
 	1400 1850 1300 1850
-Wire Wire Line
-	1300 1950 1400 1950
-Wire Wire Line
-	1400 2050 1300 2050
-Wire Wire Line
-	1300 2150 1400 2150
-Wire Wire Line
-	1400 2250 1300 2250
 Wire Wire Line
 	4100 1150 4200 1150
 Wire Wire Line
@@ -1314,7 +1276,7 @@ F 3 "" H 7750 950 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	7750 950  7750 1050
-Text GLabel 1300 2750 0    50   Input ~ 0
+Text GLabel 4200 2650 2    50   Input ~ 0
 SERVO_Grip
 Wire Wire Line
 	1300 2750 1400 2750
@@ -1471,6 +1433,88 @@ F 1 "Oto Depth" H 1850 5300 50  0000 C CNN
 F 2 "Timsah_Remote-Control:SW_Slide_1P2T_0.105pitch" H 1850 5550 50  0001 C CNN
 F 3 "~" H 1850 5550 50  0001 C CNN
 	1    1850 5550
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:LED D2
+U 1 1 5D50D731
+P 5950 6000
+F 0 "D2" H 5950 5900 50  0000 C CNN
+F 1 "LED" H 5950 6100 50  0000 C CNN
+F 2 "LED_THT:LED_D5.0mm" H 5950 6000 50  0001 C CNN
+F 3 "~" H 5950 6000 50  0001 C CNN
+	1    5950 6000
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Device:R R18
+U 1 1 5D50E94F
+P 6350 6000
+F 0 "R18" V 6250 6000 50  0000 C CNN
+F 1 "1k" V 6350 6000 50  0000 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 6280 6000 50  0001 C CNN
+F 3 "~" H 6350 6000 50  0001 C CNN
+	1    6350 6000
+	0    1    -1   0   
+$EndComp
+Wire Wire Line
+	6200 6000 6100 6000
+$Comp
+L power:GND #PWR0103
+U 1 1 5D5228AB
+P 6600 6000
+F 0 "#PWR0103" H 6600 5750 50  0001 C CNN
+F 1 "GND" H 6605 5827 50  0000 C CNN
+F 2 "" H 6600 6000 50  0001 C CNN
+F 3 "" H 6600 6000 50  0001 C CNN
+	1    6600 6000
+	0    -1   1    0   
+$EndComp
+Wire Wire Line
+	6600 6000 6500 6000
+Wire Wire Line
+	1300 2850 1400 2850
+Wire Wire Line
+	1400 2950 1300 2950
+Wire Wire Line
+	1300 2450 1400 2450
+Text GLabel 1300 2650 0    50   Input ~ 0
+LED
+Wire Wire Line
+	1300 2550 1400 2550
+Text GLabel 5650 6000 0    50   Input ~ 0
+LED
+Wire Wire Line
+	5650 6000 5800 6000
+Wire Wire Line
+	4200 2850 4100 2850
+Wire Wire Line
+	4100 2950 4200 2950
+Wire Wire Line
+	4200 1950 4100 1950
+NoConn ~ 1400 2250
+NoConn ~ 1400 2150
+NoConn ~ 1400 2050
+NoConn ~ 1400 1950
+NoConn ~ 1400 1550
+Wire Wire Line
+	1300 1350 1400 1350
+Wire Wire Line
+	1400 1250 1300 1250
+NoConn ~ 4100 2450
+NoConn ~ 4100 2550
+Wire Wire Line
+	4200 2750 4100 2750
+NoConn ~ 4100 1750
+$Comp
+L power:+5V #PWR?
+U 1 1 5D6E4C63
+P 9100 4350
+F 0 "#PWR?" H 9100 4200 50  0001 C CNN
+F 1 "+5V" H 9115 4523 50  0000 C CNN
+F 2 "" H 9100 4350 50  0001 C CNN
+F 3 "" H 9100 4350 50  0001 C CNN
+	1    9100 4350
 	1    0    0    -1  
 $EndComp
 $EndSCHEMATC
