@@ -2,7 +2,7 @@
 
   (general
     (thickness 1.6)
-    (drawings 2)
+    (drawings 1)
     (tracks 0)
     (zones 0)
     (modules 59)
@@ -3141,6 +3141,5 @@
   )
 
   (gr_circle (center 100 100) (end 150 100) (layer Edge.Cuts) (width 0.05))
-  (gr_arc (start 100 100) (end 150 100) (angle -25.51387043) (layer Edge.Cuts) (width 0.05))
 
 )
